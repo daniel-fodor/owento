@@ -1,0 +1,18 @@
+{
+  "name": "just-shovel",
+  "version": "0.0.1",
+  "description": "",
+  "license": "",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^2.0.0",
+    "node-sass": "^5.0.0"
+  }
+}
