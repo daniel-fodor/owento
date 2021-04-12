@@ -136,7 +136,7 @@ let currentElement = null;
  function listenModalClose() {
     var modalClose = document.querySelector(".showcase-modal__close");
     modalClose.addEventListener('click', function() {
-        gsap.to(showCaseModal, 1, { autoAlpha: 0, scale: 0.85, zIndex: -1000, onComplete: function() {
+        gsap.to(showCaseModal, 0.5, { autoAlpha: 0, scale: 0.85, zIndex: -1000, onComplete: function() {
             allowedScroll();
         }});
         gsap.to(currentElement, 0.5, {scale: 1});
@@ -146,7 +146,7 @@ let currentElement = null;
  function showModal() {
     var showCaseModal = document.getElementById("showCaseModal");
     showCaseModal.style.display = "block";
-    gsap.to(showCaseModal, 1, { autoAlpha: 1, scale: 1, zIndex: 9000, onComplete: function() {
+    gsap.to(showCaseModal, 0.5, { autoAlpha: 1, scale: 1, zIndex: 9000, onComplete: function() {
         listenModalClose();
         lockedScroll();
     }});
