@@ -1,0 +1,63 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 3.75rem;
+    font-size: 1.321rem;
+    font-weight: 500;
+    border: none;
+    background: none;
+}
+
+.btn--primary {
+    @extend .btn;
+    color: #454564;
+    border: 2px solid #454564;
+    height: 63px;
+    background: transparent;
+    padding: 0 2rem;
+
+    &:hover {
+        background: #7037fe;
+        border-color: #7037fe;
+        color: #fff;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+    }
+
+    span {
+        display: inline-block;
+    }
+}
+
+.btn--submit {
+    @extend .btn;
+    color: #fff;
+    height: 75px;
+    background: #06e9e3;
+    min-width: 222px;
+
+    @media (max-width: 667px) {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    &:hover {
+        color: #025452;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.25);
+
+        svg path {
+            fill: #025452;
+        }
+    }
+
+    span {
+        display: inline-block;
+        margin-left: 15px;
+        margin-top: 2px;
+    }
+    svg path {
+        fill: #fff;
+        transition: all 0.35s ease-in-out;
+    }
+}

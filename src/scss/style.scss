@@ -2,9 +2,15 @@
 @import "base/reset";
 @import "base/base";
 
-@import "components/header";
-@import "components/footer";
+@import "components/form";
 @import "components/button";
+@import "components/motion";
+@import "components/scrollbar";
+@import "components/modal";
+
+@import "partials/header";
+@import "partials/footer";
 
 @import "pages/home";
 
+@import "helper/utilities";

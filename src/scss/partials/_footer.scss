@@ -1,0 +1,104 @@
+.page-footer {
+    border-top: 1px solid #454564;
+    padding: 57px 70px 41px 70px;
+    text-align: center;
+
+    @media (max-width: 800px) {
+        padding: 40px 20px 40px 20px;
+    }
+
+    &__top {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        @media (max-width: 800px) {
+            display: block;
+        }
+    }
+
+    &__menu {
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        @media (max-width: 1200px) {
+            grid-column-start: 1;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+
+            @media (max-width: 1200px) {
+                justify-content: flex-start;
+            }
+
+            @media (max-width: 800px) {
+                justify-content: center;
+            }
+
+            li {
+                margin: 0 1.25rem;
+                @media (max-width: 667px) {
+                    margin: 0 0.85rem;
+                }
+
+                a {
+                    color: #454564;
+                    font-weight: 500;
+                    font-size: 1.25rem;
+                    white-space: nowrap;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        justify-self: end;
+        align-self: center;
+
+        @media (max-width: 800px) {
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        li {
+            margin: 0 0.8rem;
+            @media (max-width: 667px) {
+                margin: 0 0.7rem;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            a:hover {
+                svg path {
+                    fill: #fff;
+                }
+            }
+
+            svg {
+                
+            }
+
+            svg path {
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+
+    &__bottom {
+        .copyright {
+            color: #454564;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            margin-top: 3rem;
+        }
+    }
+}

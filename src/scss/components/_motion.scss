@@ -1,0 +1,137 @@
+#mouseCircle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #bbb;
+    z-index: 3000;
+}
+
+.ball-graphics {
+    position: absolute;
+    left: -300px;
+    bottom: 450px;
+    width: 30vw;
+    height: 30vw;
+    background: url("#{$imgPath}metal-ball.png") no-repeat;
+    background-size: cover;
+    z-index: 100;
+
+    @media (max-width: 1280px) {
+        display: none;
+    }
+}
+
+/* svg filter */
+.liquidEffect {
+    position: absolute;
+}
+
+
+.drops {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.drop {
+    position: absolute !important;
+    background-repeat: no-repeat;
+    z-index: 10;
+    transform: translate(0, 50px);
+    opacity: 0;
+
+    &-1 {
+        background-image: url("#{$imgPath}liquids/drop-1.png");
+        background-size: cover;
+        width: 716px;
+        height: 553px;
+        top: -250px !important;
+        left: 10%  !important;
+    }
+
+    &-2 {
+        background-image: url("#{$imgPath}liquids/drop-2.png");
+        background-size: cover;
+        width: 260px;
+        height: 240px;
+        top: 55% !important;
+        left: 50% !important;
+    }
+
+    &-3 {
+        background-image: url("#{$imgPath}liquids/drop-3.png");
+        background-size: cover;
+        width: 897px;
+        height: 792px;
+        top: 64% !important;
+        left: -200px !important;
+    }
+
+    &-4 {
+        background-image: url("#{$imgPath}liquids/drop-4.png");
+        background-size: cover;
+        width: 600px;
+        height: 635px;
+        top: 27% !important;
+        left: 62% !important;
+    }
+
+    &-5 {
+        background-image: url("#{$imgPath}liquids/drop-5.png");
+        background-size: cover;
+        width: 123px;
+        height: 124px;
+        top: 19%  !important;
+        left: 78%  !important;
+        z-index: 100;
+    }
+
+    &-6 {
+        background-image: url("#{$imgPath}liquids/drop-6.png");
+        background-size: cover;
+        width: 70px;
+        height: 115px;
+        top: 19%  !important;
+        left: 90%  !important;
+        z-index: 100;
+    }
+
+    &-7 {
+        background-image: url("#{$imgPath}liquids/drop-7.png");
+        background-size: cover;
+        width: 330px;
+        height: 248px;
+        top: 75%  !important;
+        left: 88%  !important;
+    }
+
+    &-8 {
+        background-image: url("#{$imgPath}liquids/drop-8.png");
+        background-size: cover;
+        width: 140px;
+        height: 188px;
+        top: 20%  !important;
+        left: 52%  !important;
+        z-index: 50;
+    }
+
+    &-9 {
+        background-image: url("#{$imgPath}liquids/drop-9.png");
+        background-size: cover;
+        width: 270px;
+        height: 128px;
+        top: 97%  !important;
+        left: 54%  !important;
+    }
+
+    &-10 {
+        background-image: url("#{$imgPath}liquids/drop-10.png");
+        background-size: cover;
+        width: 380px;
+        height: 585px;
+        top: 58%  !important;
+        left: 68%  !important;
+        z-index: 10;
+    }
+}

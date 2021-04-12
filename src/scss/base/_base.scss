@@ -9,18 +9,24 @@ body {
     overflow-x: hidden;
     font-style: normal;
     font-weight: 400;
+    text-size-adjust: none;
 
-    @media (max-width: 992px) {
+    @media (max-width: 1440px) {
         font-size: 15px;
     }
 
-    @media (max-width: 667px) {
+    @media (max-width: 992px) {
         font-size: 14px;
+    }
+
+    @media (max-width: 667px) {
+        font-size: 13px;
     }
 }
 
 button,
 a {
+    cursor: pointer;
     transition: all .3s ease-in-out;
 
     &:focus {
@@ -53,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     color: #fff;
     font-size: 1rem;
+    margin-top: 0;
 }
 
 main {

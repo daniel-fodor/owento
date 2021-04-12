@@ -1,0 +1,92 @@
+.page-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 55px 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+
+    // default state
+    opacity: 0;
+
+    @media (max-width: 992px) {
+        padding: 45px 40px;
+    }
+
+    @media (max-width: 667px) {
+        padding: 35px 30px;
+    }
+
+    &__logo {
+        display: block;
+        transition: all .4s ease-in-out;
+        &:hover {
+            opacity: 0.8;
+        }
+
+        img {
+            max-width: 96px;
+            width: 100%;
+        }
+
+    }
+}
+
+.page-navigation {
+
+    @media (max-width: 667px) {
+        display: none;
+    }
+
+    ul {
+        display: flex;
+
+        li {
+            position: relative;
+            margin: 0 1.25rem;
+
+            &:hover {
+                &:nth-child(3):before {
+                    opacity: 1;
+                }
+            }
+
+            // contact menu item
+            &:nth-child(3) {
+                &:before {
+                    content: '';
+                    background: linear-gradient(to right, rgba(9,199,206,1) 0%, rgba(16,77,146,1) 43%, rgba(230,9,86,1) 100%);
+                    position: absolute;
+                    top: -60px;
+                    left: -12px;
+                    width: 136px;
+                    height: 127px;
+                    opacity: 0.45;
+                    transition: all .45s ease-in-out;
+                    border-bottom-right-radius: 13px;
+                    border-bottom-left-radius: 13px;
+                }
+
+                a {
+                    opacity: 1;
+                }
+            }
+
+            a {
+                color: #fff;
+                opacity: 0.65;
+                position: relative;
+                z-index: 10;
+                font-size: 1.25rem;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+}
