@@ -9,43 +9,44 @@
 window.onload = (event) => {
     // start animation of the hero
     heroStartAnimation();
-    initSmoothScrollBar();
+    startAnimations();
+    initTestimonialSlider();
+    initIsotope();
 };
 
-function initSmoothScrollBar() {
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    gsap.registerPlugin(ScrollTrigger);
+const scroller = document.querySelector(".scroller");
+// Smooth scroll setup
+const bodyScrollBar = Scrollbar.init(scroller, {
+    damping: 0.05,
+    delegateTo: document
+});
 
-    // Smooth scroll setup
-    const bodyScrollBar = Scrollbar.init(document.body, {
-        damping: 0.05,
-        delegateTo: document,
-    });
+bodyScrollBar.setPosition(0, 0);
+bodyScrollBar.track.xAxis.element.remove();
 
-    bodyScrollBar.setPosition(0, 0);
-    bodyScrollBar.track.xAxis.element.remove();
+// How to get them to work together
+ScrollTrigger.scrollerProxy(".scroller", {
+    scrollTop(value) {
+        if (arguments.length) {
+            bodyScrollBar.scrollTop = value;
+        }
+        return bodyScrollBar.scrollTop;
+    },
+    getBoundingClientRect() {
+        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+    }
+});
 
-    // How to get them to work together
-    ScrollTrigger.scrollerProxy("body", {
-        scrollTop(value) {
-            if (arguments.length) {
-                bodyScrollBar.scrollTop = value;
-            }
-            return bodyScrollBar.scrollTop;
-        },
-    });
+bodyScrollBar.addListener(ScrollTrigger.update);
 
-    bodyScrollBar.addListener(ScrollTrigger.update);
-
-    // init other methods
-    //initParallaxEffect();
-    startAnimations();
-}
+ScrollTrigger.defaults({ scroller: scroller });
 
 function initParallaxEffect() {
     var scroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
     });
 }
 
@@ -267,7 +268,6 @@ function removePortfolioActive() {
 
 var maxWidth = 992;
 function startAnimations() {
-
     if (window.innerWidth >= 720) {
         // animation to top of the page section
         gsap.set("#appService", { scale: 0.5, opacity: 0, left: "70%" });
@@ -279,36 +279,49 @@ function startAnimations() {
         gsap.set("#websiteService", { scale: 0.65, opacity: 1 });
     }
 
-    const timeline = gsap.timeline();
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#services",
+            start: "center center",
+            pin: true,
+            scrub: true,
+        },
+    });
 
-    ScrollTrigger.create({
-        trigger: "#services",
-        start:"top top",
-        pin: true,
-        onComplete: function () {
-            timeline
-            .to("#appService", 1, {
+    timeline
+        .to(
+            "#appService",
+            1,
+            {
                 scale: 1,
                 opacity: 1,
                 left: "50%",
-            })
-            .to("#brandingService", 1, {
+            },
+            "servicesLabel"
+        )
+        .to(
+            "#brandingService",
+            1,
+            {
                 scale: 1,
                 opacity: 1,
                 right: "50%",
-            })
-            .to("#websiteService", 1, {
+            },
+            "servicesLabel"
+        )
+        .to(
+            "#websiteService",
+            1,
+            {
                 scale: 1,
-            });
-        }
-      });
-
+            },
+            "servicesLabel"
+        );
 }
 
 // window.addEventListener("resize", e => {
 //     ScrollTrigger.refresh();
 //   });
-
 
 // if( !tooSmall ) {
 //
@@ -335,15 +348,19 @@ function startAnimations() {
  * Testimonial slider
  *
  */
-// const swiper = new Swiper(".js-testimonials-carousel", {
-//     loop: true,
-//     slidesPerView: 1,
-//     spaceBetween: 80,
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         prevEl: ".swiper-button-prev",
-//     },
-// });
+
+function initTestimonialSlider() {
+    const swiper = new Swiper(".js-testimonials-carousel", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 80,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+}
+
 
 /**
  *
@@ -448,63 +465,68 @@ function wordsAnimation() {
         setInterval(changeWord, 2000);
     }, 500);
 }
+
+// Start wordsAnimation delayed
 setTimeout(function () {
     wordsAnimation();
 }, 1700);
 
-
-
 /**
  *
- * Scrolling
+ * Scrolling jump
  *
  */
-// let allMenuItems = document.querySelectorAll(".js-menu a");
-// [].forEach.call(allMenuItems, function (item) {
-//     item.addEventListener("click", function (e) {
-//         var id = item.getAttribute("href");
-//         if (id.length > 0) {
-//             e.preventDefault();
+let allMenuItems = document.querySelectorAll(".js-menu a");
+[].forEach.call(allMenuItems, function (item) {
+    item.addEventListener("click", function (e) {
+        var target = item.getAttribute("href");
+        const targetEl = document.querySelector(target);
+        const targetRect = targetEl.getBoundingClientRect();
 
-//             TweenMax.to(window, 1, { scrollTo: { y: id } });
+        gsap.to(bodyScrollBar, {
+            scrollTo: targetRect.top,
+            duration: 1
+        });
 
-//             // if supported by the browser we can even update the URL.
-//             if (window.history && window.history.pushState) {
-//                 history.pushState("", document.title, id);
-//             }
-//         }
-//     });
-// });
+        // if supported by the browser we can even update the URL.
+        if (window.history && window.history.pushState) {
+            history.pushState("", document.title, target);
+        }
+    });
+});
 
 /**
  *
  * Isotope init
  *
  */
-// var portfolioItem = document.querySelector(".portfolio-items");
-// var portfolioGrid = new Isotope(portfolioItem, {
-//     itemSelector: ".portfolio-items__item",
-//     percentPosition: true,
-//     layoutMode: "fitRows",
-//     fitRows: {
-//         gutter: 30,
-//     },
-// });
+function initIsotope() {
+    var portfolioItem = document.querySelector(".portfolio-items");
+    var portfolioGrid = new Isotope(portfolioItem, {
+        itemSelector: ".portfolio-items__item",
+        percentPosition: true,
+        layoutMode: "fitRows",
+        fitRows: {
+            gutter: 30,
+        },
+    });
 
-// var portfolioItems = document.querySelectorAll(".portfolio-categories a");
-// [].forEach.call(portfolioItems, (item) => {
-//     item.addEventListener("click", (e) => {
-//         e.preventDefault();
-//         removePortfolioActiveClass();
-//         item.parentNode.classList.add("active");
-//         var filterValue = item.dataset.filter;
-//         portfolioGrid.arrange({ filter: filterValue });
-//     });
-// });
+    var portfolioItems = document.querySelectorAll(".portfolio-categories a");
+    [].forEach.call(portfolioItems, (item) => {
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            removePortfolioActiveClass();
+            item.parentNode.classList.add("active");
+            var filterValue = item.dataset.filter;
+            portfolioGrid.arrange({ filter: filterValue });
+        });
+    });
 
-// function removePortfolioActiveClass() {
-//     let portfolioItems = document.querySelectorAll(".portfolio-categories a");
-//     [].forEach.call(portfolioItems, (item) => {
-//         item.parentNode.classList.remove("active");
-//     });
-// }
+}
+
+function removePortfolioActiveClass() {
+    let portfolioItems = document.querySelectorAll(".portfolio-categories a");
+    [].forEach.call(portfolioItems, (item) => {
+        item.parentNode.classList.remove("active");
+    });
+}
