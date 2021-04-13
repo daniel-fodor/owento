@@ -7,10 +7,20 @@
     z-index: 3000;
 }
 
-.ball-graphics {
+.parallax-ball {
     position: absolute;
     left: -300px;
     bottom: 450px;
+    width: 30vw;
+    height: 30vw;
+
+    @media (max-width: 1280px) {
+        display: none;
+    }
+}
+
+.ball-graphics {
+    position: absolute;
     width: 30vw;
     height: 30vw;
     background: url("#{$imgPath}metal-ball.png") no-repeat;
