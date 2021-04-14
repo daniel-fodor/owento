@@ -16,6 +16,28 @@
         }
     }
 
+    &__logo {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        &:hover svg path {
+            fill: #fff;
+        }
+
+        svg {
+            max-width: 120px;
+        }
+
+        svg path {
+            transition: .3s ease-in-out;
+        }
+
+        @media (max-width: 992px) {
+            margin-bottom: 25px;
+        }
+    }
+
     &__menu {
         grid-column-start: 2;
         grid-column-end: 3;
@@ -35,6 +57,7 @@
 
             @media (max-width: 800px) {
                 justify-content: center;
+                margin-bottom: 30px;
             }
 
             li {

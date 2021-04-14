@@ -34,9 +34,6 @@ ScrollTrigger.scrollerProxy(".scroller", {
         }
         return bodyScrollBar.scrollTop;
     },
-    getBoundingClientRect() {
-        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-    }
 });
 
 bodyScrollBar.addListener(ScrollTrigger.update);
@@ -103,7 +100,7 @@ const featuredRight = document.querySelector(".featured-items__right");
 
 ScrollTrigger.create({
     trigger: featuredSection,
-    start: "top 200px",
+    start: "bottom bottom",
     onEnter: function () {
         gsap.to(featuredLeft, 1, { opacity: 1, x: 0 });
         gsap.to(featuredRight, 1, { opacity: 1, x: 0 });
@@ -113,7 +110,7 @@ ScrollTrigger.create({
 const portfolio = document.getElementById("portfolio");
 ScrollTrigger.create({
     trigger: portfolio,
-    start: "top 500px",
+    start: "center center",
     onEnter: function () {
         gsap.to(portfolio, 1, { opacity: 1, y: 0 });
     },
@@ -122,7 +119,7 @@ ScrollTrigger.create({
 const clients = document.querySelector(".block--clients");
 ScrollTrigger.create({
     trigger: clients,
-    start: "top 300px",
+    start: "center center",
     onEnter: function () {
         gsap.to(clients, 1, { opacity: 1, y: 0 });
     },
@@ -131,7 +128,7 @@ ScrollTrigger.create({
 const testis = document.querySelector(".block--testimonials");
 ScrollTrigger.create({
     trigger: testis,
-    start: "top 600px",
+    start: "center center",
     onEnter: function () {
         gsap.to(testis, 1, { opacity: 1, y: 0 });
     },
@@ -142,7 +139,7 @@ const handGraphics = document.querySelector(".hand-graphics");
 
 ScrollTrigger.create({
     trigger: contactBlock,
-    start: "top 400px",
+    start: "center center",
     onEnter: function () {
         gsap.to(contactBlock, 1, { opacity: 1, y: 0 });
         gsap.to(handGraphics, 1, { css: { left: "-220px", opacity: 1 } });
@@ -153,7 +150,7 @@ const testimonialBlock = document.querySelector(".block--testimonials");
 const iconsGraphics = document.querySelector(".icons-graphics");
 ScrollTrigger.create({
     trigger: testimonialBlock,
-    start: "top 500px",
+    start: "center center",
     onEnter: function () {
         gsap.to(iconsGraphics, 1, { css: { right: "-120px", opacity: 1 } });
     },
@@ -482,6 +479,8 @@ let allMenuItems = document.querySelectorAll(".js-menu a");
         var target = item.getAttribute("href");
         const targetEl = document.querySelector(target);
         const targetRect = targetEl.getBoundingClientRect();
+
+        console.log(targetRect.top);
 
         gsap.to(bodyScrollBar, {
             scrollTo: targetRect.top,
