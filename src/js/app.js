@@ -4,48 +4,44 @@
  *
  *
  */
+ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 /* init App */
 window.onload = (event) => {
+
+    const scroller = document.querySelector(".scroller");
+    // Smooth scroll setup
+    const bodyScrollBar = Scrollbar.init(scroller, {
+        delegateTo: document,
+    });
+
+    bodyScrollBar.setPosition(0, 0);
+    bodyScrollBar.track.xAxis.element.remove();
+
+    // How to get them to work together
+    ScrollTrigger.scrollerProxy('.scroller', {
+        scrollTop(value) {
+            if (arguments.length) {
+                bodyScrollBar.scrollTop = value;
+            }
+            return bodyScrollBar.scrollTop;
+        },
+    });
+
+    bodyScrollBar.addListener(ScrollTrigger.update);
+
+    ScrollTrigger.defaults({ scroller: '.scroller' });
+
+    console.log(bodyScrollBar);
+
     // start animation of the hero
     heroStartAnimation();
     startAnimations();
     initTestimonialSlider();
     initIsotope();
+    sectionAnimations();
+    navigation(bodyScrollBar);
 };
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
-const scroller = document.querySelector(".scroller");
-// Smooth scroll setup
-const bodyScrollBar = Scrollbar.init(scroller, {
-    damping: 0.05,
-    delegateTo: document
-});
-
-bodyScrollBar.setPosition(0, 0);
-bodyScrollBar.track.xAxis.element.remove();
-
-// How to get them to work together
-ScrollTrigger.scrollerProxy(".scroller", {
-    scrollTop(value) {
-        if (arguments.length) {
-            bodyScrollBar.scrollTop = value;
-        }
-        return bodyScrollBar.scrollTop;
-    },
-});
-
-bodyScrollBar.addListener(ScrollTrigger.update);
-
-ScrollTrigger.defaults({ scroller: scroller });
-
-function initParallaxEffect() {
-    var scroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-    });
-}
 
 /**
 Init animation
@@ -93,68 +89,89 @@ function heroStartAnimation() {
  * Animations other section
  *
  */
-// step triggers and animations
-const featuredSection = document.querySelector(".block--featured");
-const featuredLeft = document.querySelector(".featured-items__left");
-const featuredRight = document.querySelector(".featured-items__right");
 
-ScrollTrigger.create({
-    trigger: featuredSection,
-    start: "bottom bottom",
-    onEnter: function () {
-        gsap.to(featuredLeft, 1, { opacity: 1, x: 0 });
-        gsap.to(featuredRight, 1, { opacity: 1, x: 0 });
-    },
-});
+function sectionAnimations() {
+    // step triggers and animations
+    const featuredSection = document.querySelector(".block--featured");
+    const featuredLeft = document.querySelector(".featured-items__left");
+    const featuredRight = document.querySelector(".featured-items__right");
 
-const portfolio = document.getElementById("portfolio");
-ScrollTrigger.create({
-    trigger: portfolio,
-    start: "center center",
-    onEnter: function () {
-        gsap.to(portfolio, 1, { opacity: 1, y: 0 });
-    },
-});
+    gsap.to(featuredLeft, 1, {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+            trigger: featuredSection,
+            start: "0 20%"
+        },
+    });
+    gsap.to(featuredRight, 1, {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+            trigger: featuredSection,
+            start: "0 20%"
+        },
+    });
 
-const clients = document.querySelector(".block--clients");
-ScrollTrigger.create({
-    trigger: clients,
-    start: "center center",
-    onEnter: function () {
-        gsap.to(clients, 1, { opacity: 1, y: 0 });
-    },
-});
+    const portfolio = document.getElementById("portfolio");
+    gsap.to(portfolio, 1, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+            trigger: featuredSection,
+            start: "center center",
+        },
+    });
 
-const testis = document.querySelector(".block--testimonials");
-ScrollTrigger.create({
-    trigger: testis,
-    start: "center center",
-    onEnter: function () {
-        gsap.to(testis, 1, { opacity: 1, y: 0 });
-    },
-});
+    const clients = document.querySelector(".block--clients");
+    const clientsBlock = document.querySelector(".block--clients .block__inner");
+    gsap.to(clientsBlock, 1, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+            trigger: clients,
+            start: "0 50%"
+        },
+    });
 
-const contactBlock = document.querySelector(".contact");
-const handGraphics = document.querySelector(".hand-graphics");
+    const testis = document.querySelector(".block--testimonials");
+    gsap.to(testis, 1, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+            trigger: testis,
+            start: "0 60%",
+        },
+    });
 
-ScrollTrigger.create({
-    trigger: contactBlock,
-    start: "center center",
-    onEnter: function () {
-        gsap.to(contactBlock, 1, { opacity: 1, y: 0 });
-        gsap.to(handGraphics, 1, { css: { left: "-220px", opacity: 1 } });
-    },
-});
+    const contactBlock = document.querySelector(".contact");
+    const handGraphics = document.querySelector(".hand-graphics");
+    gsap.to(contactBlock, 1, {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+            trigger: contactBlock,
+            start: "0 50%",
+        },
+    });
+    gsap.to(handGraphics, 1, {
+        css: { left: "-220px", opacity: 1 },
+        scrollTrigger: {
+            trigger: contactBlock,
+            start: "0 50%",
+        },
+    });
 
-const testimonialBlock = document.querySelector(".block--testimonials");
-const iconsGraphics = document.querySelector(".icons-graphics");
-ScrollTrigger.create({
-    trigger: testimonialBlock,
-    start: "center center",
-    onEnter: function () {
-        gsap.to(iconsGraphics, 1, { css: { right: "-120px", opacity: 1 } });
-    },
-});
+    const testimonialBlock = document.querySelector(".block--testimonials");
+    const iconsGraphics = document.querySelector(".icons-graphics");
+    gsap.to(iconsGraphics, 1, {
+        css: { right: "-120px", opacity: 1 },
+        scrollTrigger: {
+            trigger: testimonialBlock,
+            start: "0 50%",
+        },
+    });
+}
 
 /**
  * Modal working
@@ -191,6 +208,7 @@ function showModal() {
         scale: 1,
         zIndex: 9000,
         onComplete: function () {
+            initScrollPane();
             listenModalClose();
             lockedScroll();
         },
@@ -205,6 +223,10 @@ function lockedScroll() {
 function allowedScroll() {
     var html = document.querySelector("html");
     html.classList.remove("scroll-disabled");
+}
+
+function initScrollPane() {
+    new SimpleBar(document.querySelector('.showcase-modal__body')[0]);
 }
 
 /**
@@ -279,9 +301,10 @@ function startAnimations() {
     const timeline = gsap.timeline({
         scrollTrigger: {
             trigger: "#services",
-            start: "center center",
-            pin: true,
-            scrub: true,
+            start: "top top",
+            //pin: true,
+            //scrub: true,
+            pinSpacing: false
         },
     });
 
@@ -357,7 +380,6 @@ function initTestimonialSlider() {
         },
     });
 }
-
 
 /**
  *
@@ -473,26 +495,28 @@ setTimeout(function () {
  * Scrolling jump
  *
  */
-let allMenuItems = document.querySelectorAll(".js-menu a");
-[].forEach.call(allMenuItems, function (item) {
-    item.addEventListener("click", function (e) {
-        var target = item.getAttribute("href");
-        const targetEl = document.querySelector(target);
-        const targetRect = targetEl.getBoundingClientRect();
+function navigation(bodyScrollBar) {
+    let allMenuItems = document.querySelectorAll(".js-menu a");
+    [].forEach.call(allMenuItems, function (item) {
+        item.addEventListener("click", function (e) {
+            var target = item.getAttribute("href");
+            const targetEl = document.querySelector(target);
+            const targetRect = targetEl.getBoundingClientRect();
 
-        console.log(targetRect.top);
+            console.log(targetRect.top);
 
-        gsap.to(bodyScrollBar, {
-            scrollTo: targetRect.top,
-            duration: 1
+            gsap.to(bodyScrollBar, {
+                scrollTo: targetRect.top,
+                duration: 1,
+            });
+
+            // if supported by the browser we can even update the URL.
+            if (window.history && window.history.pushState) {
+                history.pushState("", document.title, target);
+            }
         });
-
-        // if supported by the browser we can even update the URL.
-        if (window.history && window.history.pushState) {
-            history.pushState("", document.title, target);
-        }
     });
-});
+}
 
 /**
  *
@@ -520,7 +544,6 @@ function initIsotope() {
             portfolioGrid.arrange({ filter: filterValue });
         });
     });
-
 }
 
 function removePortfolioActiveClass() {
