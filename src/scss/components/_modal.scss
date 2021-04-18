@@ -9,6 +9,7 @@
     visibility: hidden;
     transform: scale(.95);
     background: rgba(#070216, 1);
+    overflow-x: hidden;
 
     &__btn {
         border: 1px solid #06E9E3;

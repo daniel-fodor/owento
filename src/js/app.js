@@ -208,9 +208,10 @@ function showModal() {
         scale: 1,
         zIndex: 9000,
         onComplete: function () {
+            lockedScroll();
+            initPortfolioSlider();
             initScrollPane();
             listenModalClose();
-            lockedScroll();
         },
     });
 }
@@ -226,7 +227,9 @@ function allowedScroll() {
 }
 
 function initScrollPane() {
-    new SimpleBar(document.querySelector('.showcase-modal__body')[0]);
+    let itemFirst = document.querySelector(".showcase-modal__body");
+    const simpleBar =new SimpleBar(itemFirst);
+    simpleBar.recalculate();
 }
 
 /**
@@ -234,31 +237,34 @@ function initScrollPane() {
  * Modal slider
  *
  */
-const portfolioSlider = new Swiper(".showcase-modal__slider", {
-    slidesPerView: 1,
-    spaceBetween: 80,
-    navigation: false,
-});
-
-let portfolioThumbs = document.querySelectorAll(".showcase-modal__thumbs a");
-[].forEach.call(portfolioThumbs, (item) => {
-    item.addEventListener("click", (e) => {
-        e.preventDefault();
-        removePortfolioActive();
-        let index = item.dataset.step;
-        portfolioSlider.slideTo(index - 1);
-        item.classList.add("active");
+function initPortfolioSlider() {
+    const portfolioSlider = new Swiper(".showcase-modal__slider", {
+        slidesPerView: 1,
+        spaceBetween: 80,
+        navigation: false,
     });
-});
 
-function removePortfolioActive() {
-    let portfolioThumbs = document.querySelectorAll(
-        ".showcase-modal__thumbs a"
-    );
+    let portfolioThumbs = document.querySelectorAll(".showcase-modal__thumbs a");
     [].forEach.call(portfolioThumbs, (item) => {
-        item.classList.remove("active");
+        item.addEventListener("click", (e) => {
+            e.preventDefault();
+            removePortfolioActive();
+            let index = item.dataset.step;
+            portfolioSlider.slideTo(index - 1);
+            item.classList.add("active");
+        });
     });
+
+    function removePortfolioActive() {
+        let portfolioThumbs = document.querySelectorAll(
+            ".showcase-modal__thumbs a"
+        );
+        [].forEach.call(portfolioThumbs, (item) => {
+            item.classList.remove("active");
+        });
+    }
 }
+
 
 /**
  * Mouse Events
