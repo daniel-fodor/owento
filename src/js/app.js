@@ -5,20 +5,43 @@
  *
  */
  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+let bodyScrollBar;
+let itWasInit = false;
+let currentYaxis = 0;
 
 /* init App */
 window.onload = (event) => {
 
+    scrollBarInit();
+
+    // start animation of the hero
+    heroStartAnimation();
+    startAnimations();
+    initTestimonialSlider();
+    initIsotope();
+    sectionAnimations();
+    navigation(bodyScrollBar);
+};
+
+
+function scrollBarInit() {
     const scroller = document.querySelector(".scroller");
-    // Smooth scroll setup
-    const bodyScrollBar = Scrollbar.init(scroller, {
+    bodyScrollBar = Scrollbar.init(scroller, {
         delegateTo: document,
     });
 
-    bodyScrollBar.setPosition(0, 0);
+    if (!itWasInit) {
+        bodyScrollBar.setPosition(0, 0);
+        itWasInit = true;
+    } else {
+        console.log(currentYaxis);
+        console.log("újra init");
+        if (currentYaxis > 0) {
+            bodyScrollBar.setPosition(0, currentYaxis);
+        }
+    }
     bodyScrollBar.track.xAxis.element.remove();
 
-    // How to get them to work together
     ScrollTrigger.scrollerProxy('.scroller', {
         scrollTop(value) {
             if (arguments.length) {
@@ -33,15 +56,7 @@ window.onload = (event) => {
     ScrollTrigger.defaults({ scroller: '.scroller' });
 
     console.log(bodyScrollBar);
-
-    // start animation of the hero
-    heroStartAnimation();
-    startAnimations();
-    initTestimonialSlider();
-    initIsotope();
-    sectionAnimations();
-    navigation(bodyScrollBar);
-};
+}
 
 /**
 Init animation
@@ -189,6 +204,7 @@ var portfolioItems = document.querySelectorAll(".portfolio-items__item");
 function listenModalClose() {
     var modalClose = document.querySelector(".showcase-modal__close");
     modalClose.addEventListener("click", function () {
+        scrollBarInit();
         gsap.to(showCaseModal, 0.3, {
             autoAlpha: 0,
             scale: 0.95,
@@ -210,7 +226,6 @@ function showModal() {
         onComplete: function () {
             lockedScroll();
             initPortfolioSlider();
-            initScrollPane();
             listenModalClose();
         },
     });
@@ -226,12 +241,6 @@ function allowedScroll() {
     html.classList.remove("scroll-disabled");
 }
 
-function initScrollPane() {
-    let itemFirst = document.querySelector(".showcase-modal__body");
-    const simpleBar =new SimpleBar(itemFirst);
-    simpleBar.recalculate();
-}
-
 /**
  *
  * Modal slider
@@ -242,7 +251,27 @@ function initPortfolioSlider() {
         slidesPerView: 1,
         spaceBetween: 80,
         navigation: false,
+        mousewheel: false,
+        observer: true,
+        observeParents: true,
+        init: false
     });
+
+    portfolioSlider.on('init', () => {
+
+        let itemFirst = document.querySelector(".showcase-modal__body");
+
+        let offset = bodyScrollBar.offset;
+        bodyScrollBar.destroy();
+        currentYaxis = offset.y;
+
+        OverlayScrollbars(itemFirst, { });
+
+    });
+    portfolioSlider.init();
+
+
+
 
     let portfolioThumbs = document.querySelectorAll(".showcase-modal__thumbs a");
     [].forEach.call(portfolioThumbs, (item) => {
