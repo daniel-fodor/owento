@@ -345,7 +345,7 @@ function initPortfolioSlider() {
 
 var maxWidth = 992;
 function startAnimations() {
-    if (window.innerWidth >= 720) {
+
         // animation to top of the page section
         gsap.set("#appService", { scale: 0.5, opacity: 0, left: "70%" });
         gsap.set("#brandingService", {
@@ -354,7 +354,6 @@ function startAnimations() {
             right: "70%",
         });
         gsap.set("#websiteService", { scale: 0.65, opacity: 1 });
-    }
 
     const timeline = gsap.timeline({
         paused: true,
