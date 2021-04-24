@@ -47,7 +47,7 @@ function scrollBarInit() {
     ScrollTrigger.scrollerProxy(".scroller", {
         scrollTop(value) {
             if (arguments.length) {
-                locoScroll.scrollTop(value, 0, 0);
+                locoScroll.scrollTo(value, 0, 0);
             }
             return locoScroll.scroll.instance.scroll.y;
         },
