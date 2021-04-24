@@ -22,7 +22,7 @@ function scrollBarInit() {
 
     //const scroller = document.querySelector(".scroller");
 
-    const locoScroll = new LocomotiveScroll({
+    locoScroll = new LocomotiveScroll({
         el: document.querySelector(".scroller"),
         smooth: true,
         lerp: 0.05
@@ -226,7 +226,7 @@ var portfolioItems = document.querySelectorAll(".portfolio-items__item");
 function listenModalClose() {
     var modalClose = document.querySelector(".showcase-modal__close");
     modalClose.addEventListener("click", function () {
-        scrollBarInit();
+        locoScroll.scrollTo({top: currentYaxis});
         gsap.to(showCaseModal, 0.3, {
             autoAlpha: 0,
             scale: 0.95,
@@ -282,9 +282,8 @@ function initPortfolioSlider() {
     portfolioSlider.on("init", () => {
         let itemFirst = document.querySelector(".showcase-modal__body");
 
-        let offset = locoScroll.offset;
-        locoScroll.destroy();
-        currentYaxis = offset.y;
+        let offset = locoScroll.scroll.instance.scroll.y;
+        currentYaxis =  offset;
 
         OverlayScrollbars(itemFirst, {});
     });
