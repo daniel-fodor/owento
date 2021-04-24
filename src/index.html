@@ -64,7 +64,7 @@
                 </header>
 
                 <div class="hero" id="hero">
-                    <h1 class="hero__title">
+                    <h1 class="hero__title" data-scroll data-scroll-speed="3"  data-scroll-delay="0.06">
                         Let's work Together on Your
                         <span class="word">
                             <span class="word__item">success.</span>
@@ -88,6 +88,7 @@
 
                 <main class="page-content" id="pageContent">
 
+                    <div class="services-top-wrapper" style="position: relative;">
                     <section class="block block--services" id="services">
                         <div class="block__inner">
                             <h2 class="block__title">What we do</h2>
@@ -129,136 +130,137 @@
                                 </a>
                             </div>
                         </div>
+                        </section>
 
-                        <div class="parallax-ball">
-                            <div class="ball-graphics" aria-hidden="true"></div>
+                        <div class="parallax-ball" aria-hidden="true" data-scroll data-scroll-delay="0.03" data-scroll-speed="-2">
+                            <div class="ball-graphics"></div>
                         </div>
-                    </section>
 
-                    <section class="block block--featured">
-                        <div class="block__inner">
-                            <h2 class="block__title">Previous Projects</h2>
+                        <section class="block block--featured">
+                            <div class="block__inner">
+                                <h2 class="block__title">Previous Projects</h2>
 
-                            <div class="featured-items">
-                                <div class="featured-items__left">
-                                    <div class="item-toptitle">Featured</div>
-                                    <h3 class="item-title">
-                                        Website Design For ELGG
-                                    </h3>
-                                    <p class="item-text">
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Quibusdam praesentium
-                                        et est enim distinctio culpa, doloribus
-                                        consectetur maxime autem aliquam!
-                                    </p>
-                                    <a href="#" class="btn--primary"
-                                        >Check Preview
-                                        <span
-                                            ><svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 12.788 22.433"
-                                            >
-                                                <path
-                                                    data-name="Path 1"
-                                                    d="M12.787 11.217a1.566 1.566 0 01-.46 1.111l-9.646 9.645a1.571 1.571 0 01-2.222-2.222l8.535-8.535L.459 2.682A1.571 1.571 0 112.681.461l9.646 9.646a1.566 1.566 0 01.46 1.11z"
-                                                    fill="#514564"
-                                                /></svg></span
-                                    ></a>
+                                <div class="featured-items">
+                                    <div class="featured-items__left">
+                                        <div class="item-toptitle">Featured</div>
+                                        <h3 class="item-title">
+                                            Website Design For ELGG
+                                        </h3>
+                                        <p class="item-text">
+                                            Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Quibusdam praesentium
+                                            et est enim distinctio culpa, doloribus
+                                            consectetur maxime autem aliquam!
+                                        </p>
+                                        <a href="#" class="btn--primary"
+                                            >Check Preview
+                                            <span
+                                                ><svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 12.788 22.433"
+                                                >
+                                                    <path
+                                                        data-name="Path 1"
+                                                        d="M12.787 11.217a1.566 1.566 0 01-.46 1.111l-9.646 9.645a1.571 1.571 0 01-2.222-2.222l8.535-8.535L.459 2.682A1.571 1.571 0 112.681.461l9.646 9.646a1.566 1.566 0 01.46 1.11z"
+                                                        fill="#514564"
+                                                    /></svg></span
+                                        ></a>
+                                    </div>
+                                    <div class="featured-items__right">
+                                        <img
+                                            src="img/featured-img.png"
+                                            alt="Website Design For ELGG" data-scroll data-scroll-delay="0.05" data-scroll-speed="1"
+                                        />
+                                    </div>
                                 </div>
-                                <div class="featured-items__right">
-                                    <img
-                                        src="img/featured-img.png"
-                                        alt="Website Design For ELGG"
-                                    />
+
+                                <div class="portfolio" id="portfolio">
+                                    <div class="portfolio-categories">
+                                        <ul>
+                                            <li>
+                                                <a href="#" data-filter=".web-design">Web Design</a>
+                                            </li>
+                                            <li><a href="#" data-filter=".mobile-app">Mobile App</a></li>
+                                            <li><a href="#" data-filter=".branding">Branding</a></li>
+                                            <li><a href="#" data-filter=".social-media">Social Media</a></li>
+                                            <li><a href="#" data-filter=".illustration">Illustrations</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="portfolio-items">
+                                        <a href="#" class="portfolio-items__item web-design">
+                                            <img
+                                                src="img/portfolio-01.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a1" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a1)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item web-design">
+                                            <img
+                                                src="img/portfolio-02.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a2" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a2)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item mobile-app">
+                                            <img
+                                                src="img/portfolio-03.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a3" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a3)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item branding">
+                                            <img
+                                                src="img/portfolio-04.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a5" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a5)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item web-design">
+                                            <img
+                                                src="img/portfolio-01.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a6" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a6)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item web-design">
+                                            <img
+                                                src="img/portfolio-02.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a7" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a7)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item illustration">
+                                            <img
+                                                src="img/portfolio-03.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a8" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a8)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                        <a href="#" class="portfolio-items__item web-design">
+                                            <img
+                                                src="img/portfolio-03.jpg"
+                                                alt="The marketing dollar"
+                                            />
+                                            <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a8" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a8)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
+                                            <h3>The marketing dollar</h3>
+                                        </a>
+                                    </div>
+                                    <div class="showmore">
+                                        <a class="btn--primary" href="#"
+                                            >Show More <span><svg xmlns="http://www.w3.org/2000/svg" width="16.68" height="9.508"><path data-name="Path 1" d="M8.34 9.508a1.165 1.165 0 01-.826-.342L.342 1.994A1.168 1.168 0 011.994.342L8.34 6.688 14.686.342a1.168 1.168 0 011.652 1.652L9.166 9.166a1.165 1.165 0 01-.826.342z" fill="#514564"/></svg></span
+                                                ></a>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="portfolio" id="portfolio">
-                                <div class="portfolio-categories">
-                                    <ul>
-                                        <li>
-                                            <a href="#" data-filter=".web-design">Web Design</a>
-                                        </li>
-                                        <li><a href="#" data-filter=".mobile-app">Mobile App</a></li>
-                                        <li><a href="#" data-filter=".branding">Branding</a></li>
-                                        <li><a href="#" data-filter=".social-media">Social Media</a></li>
-                                        <li><a href="#" data-filter=".illustration">Illustrations</a></li>
-                                    </ul>
-                                </div>
-                                <div class="portfolio-items">
-                                    <a href="#" class="portfolio-items__item web-design">
-                                        <img
-                                            src="img/portfolio-01.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a1" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a1)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item web-design">
-                                        <img
-                                            src="img/portfolio-02.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a2" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a2)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item mobile-app">
-                                        <img
-                                            src="img/portfolio-03.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a3" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a3)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item branding">
-                                        <img
-                                            src="img/portfolio-04.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a5" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a5)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item web-design">
-                                        <img
-                                            src="img/portfolio-01.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a6" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a6)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item web-design">
-                                        <img
-                                            src="img/portfolio-02.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a7" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a7)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item illustration">
-                                        <img
-                                            src="img/portfolio-03.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a8" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a8)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                    <a href="#" class="portfolio-items__item web-design">
-                                        <img
-                                            src="img/portfolio-03.jpg"
-                                            alt="The marketing dollar"
-                                        />
-                                        <div class="item-gallery-sign"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="28.5"><defs><filter id="a8" x="0" y="0" width="27" height="28.5" filterUnits="userSpaceOnUse"><feOffset dy="3"/><feGaussianBlur stdDeviation=".5" result="blur"/><feFlood flood-opacity=".161"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g filter="url(#a8)"><path data-name="fi-rr-copy" d="M16.5 20h-10a5.006 5.006 0 01-5-5V5a5.006 5.006 0 015-5h10a5.006 5.006 0 015 5v10a5.006 5.006 0 01-5 5zM6.5 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V5a3 3 0 00-3-3zm19 17V6a1 1 0 00-2 0v13a3 3 0 01-3 3h-13a1 1 0 000 2h13a5.006 5.006 0 005-5z" fill="#fff"/></g></svg></div>
-                                        <h3>The marketing dollar</h3>
-                                    </a>
-                                </div>
-                                <div class="showmore">
-                                    <a class="btn--primary" href="#"
-                                        >Show More <span><svg xmlns="http://www.w3.org/2000/svg" width="16.68" height="9.508"><path data-name="Path 1" d="M8.34 9.508a1.165 1.165 0 01-.826-.342L.342 1.994A1.168 1.168 0 011.994.342L8.34 6.688 14.686.342a1.168 1.168 0 011.652 1.652L9.166 9.166a1.165 1.165 0 01-.826.342z" fill="#514564"/></svg></span
-                                            ></a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
 
                     <section class="block block--clients">
                         <div class="block__inner">
@@ -323,7 +325,7 @@
                     </section>
 
                     <section class="block block--testimonials">
-                        <div class="icons-graphics parallax-item" data-rellax-speed="-6.5" aria-hidden="true"></div>
+                        <div class="icons-graphics parallax-item" data-scroll data-scroll-delay="0.02" data-scroll-speed="-3" aria-hidden="true"></div>
                         <div class="block__inner">
                             <h2 class="block__title">Testimonials</h2>
 
@@ -703,6 +705,7 @@
             </div>
        </div>
 
+
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
@@ -716,18 +719,19 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
+        <!-- for preloading screen -->
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
-        <script src="https://unpkg.com/smooth-scrollbar@8.6.1/dist/smooth-scrollbar.js"></script>
+        <!-- <script src="https://unpkg.com/smooth-scrollbar@8.6.1/dist/smooth-scrollbar.js"></script> -->
 
         <!-- isotope -->
         <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 
-        <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/js/OverlayScrollbars.js" integrity="sha512-5jCo7FSgnSK+019/iHPtV/7Ov8lSSXjeZDVLI8lIk6dkp2B2k/p0wX47hWMyWWT9LTLanRsd2izrwqcWgd7Jog==" crossorigin="anonymous"></script>
 
-        <script type="text/javascript" src="js/vendor/fakescroll.js"></script>
+        <!-- <script type="text/javascript" src="js/vendor/fakescroll.js"></script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
         <script src="js/app.js"></script>
 

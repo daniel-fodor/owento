@@ -4,8 +4,8 @@
  *
  *
  */
- gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-let bodyScrollBar;
+
+let locoScroll;
 let itWasInit = false;
 let currentYaxis = 0;
 
@@ -13,49 +13,69 @@ let currentYaxis = 0;
 window.onload = (event) => {
 
     scrollBarInit();
-
     // start animation of the hero
     heroStartAnimation();
+};
+
+function scrollBarInit() {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    //const scroller = document.querySelector(".scroller");
+
+    const locoScroll = new LocomotiveScroll({
+        el: document.querySelector(".scroller"),
+        smooth: true,
+        lerp: 0.05
+    });
+
+    // bodyScrollBar = Scrollbar.init(scroller, {
+    //     delegateTo: document,
+    // });
+
+    // if (!itWasInit) {
+    //     bodyScrollBar.setPosition(0, 0);
+    //     itWasInit = true;
+    // } else {
+    //     console.log(currentYaxis);
+    //     console.log("újra init");
+    //     if (currentYaxis > 0) {
+    //         bodyScrollBar.setPosition(0, currentYaxis);
+    //     }
+    // }
+    //bodyScrollBar.track.xAxis.element.remove();
+
+    ScrollTrigger.scrollerProxy(".scroller", {
+        scrollTop(value) {
+            if (arguments.length) {
+                locoScroll.scrollTop(value, 0, 0);
+            }
+            return locoScroll.scroll.instance.scroll.y;
+        },
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight,
+            };
+        },
+        pinType: document.querySelector(".scroller").style.transform ? "transform" : "fixed"
+    });
+
+    locoScroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.defaults({ scroller: ".scroller" });
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+    // refresh when all images were loaded
     startAnimations();
     initTestimonialSlider();
     initIsotope();
     sectionAnimations();
-    navigation(bodyScrollBar);
-};
+    navigation(locoScroll);
 
-
-function scrollBarInit() {
-    const scroller = document.querySelector(".scroller");
-    bodyScrollBar = Scrollbar.init(scroller, {
-        delegateTo: document,
+    imagesLoaded(document.querySelector(".page-wrapper"), function (instance) {
+        ScrollTrigger.refresh();
     });
-
-    if (!itWasInit) {
-        bodyScrollBar.setPosition(0, 0);
-        itWasInit = true;
-    } else {
-        console.log(currentYaxis);
-        console.log("újra init");
-        if (currentYaxis > 0) {
-            bodyScrollBar.setPosition(0, currentYaxis);
-        }
-    }
-    bodyScrollBar.track.xAxis.element.remove();
-
-    ScrollTrigger.scrollerProxy('.scroller', {
-        scrollTop(value) {
-            if (arguments.length) {
-                bodyScrollBar.scrollTop = value;
-            }
-            return bodyScrollBar.scrollTop;
-        },
-    });
-
-    bodyScrollBar.addListener(ScrollTrigger.update);
-
-    ScrollTrigger.defaults({ scroller: '.scroller' });
-
-    console.log(bodyScrollBar);
 }
 
 /**
@@ -116,7 +136,7 @@ function sectionAnimations() {
         x: 0,
         scrollTrigger: {
             trigger: featuredSection,
-            start: "0 20%"
+            start: "0 20%",
         },
     });
     gsap.to(featuredRight, 1, {
@@ -124,7 +144,7 @@ function sectionAnimations() {
         x: 0,
         scrollTrigger: {
             trigger: featuredSection,
-            start: "0 20%"
+            start: "0 20%",
         },
     });
 
@@ -139,13 +159,15 @@ function sectionAnimations() {
     });
 
     const clients = document.querySelector(".block--clients");
-    const clientsBlock = document.querySelector(".block--clients .block__inner");
+    const clientsBlock = document.querySelector(
+        ".block--clients .block__inner"
+    );
     gsap.to(clientsBlock, 1, {
         opacity: 1,
         y: 0,
         scrollTrigger: {
             trigger: clients,
-            start: "0 50%"
+            start: "0 50%",
         },
     });
 
@@ -254,26 +276,23 @@ function initPortfolioSlider() {
         mousewheel: false,
         observer: true,
         observeParents: true,
-        init: false
+        init: false,
     });
 
-    portfolioSlider.on('init', () => {
-
+    portfolioSlider.on("init", () => {
         let itemFirst = document.querySelector(".showcase-modal__body");
 
-        let offset = bodyScrollBar.offset;
-        bodyScrollBar.destroy();
+        let offset = locoScroll.offset;
+        locoScroll.destroy();
         currentYaxis = offset.y;
 
-        OverlayScrollbars(itemFirst, { });
-
+        OverlayScrollbars(itemFirst, {});
     });
     portfolioSlider.init();
 
-
-
-
-    let portfolioThumbs = document.querySelectorAll(".showcase-modal__thumbs a");
+    let portfolioThumbs = document.querySelectorAll(
+        ".showcase-modal__thumbs a"
+    );
     [].forEach.call(portfolioThumbs, (item) => {
         item.addEventListener("click", (e) => {
             e.preventDefault();
@@ -293,7 +312,6 @@ function initPortfolioSlider() {
         });
     }
 }
-
 
 /**
  * Mouse Events
@@ -334,12 +352,13 @@ function startAnimations() {
     }
 
     const timeline = gsap.timeline({
+        paused: true,
         scrollTrigger: {
             trigger: "#services",
-            start: "top top",
-            //pin: true,
-            //scrub: true,
-            pinSpacing: false
+            scroller: ".scroller",
+            start: "center center",
+            pin: true,
+            scrub: true,
         },
     });
 
@@ -530,20 +549,23 @@ setTimeout(function () {
  * Scrolling jump
  *
  */
-function navigation(bodyScrollBar) {
+function navigation(locoScroll) {
     let allMenuItems = document.querySelectorAll(".js-menu a");
     [].forEach.call(allMenuItems, function (item) {
         item.addEventListener("click", function (e) {
+            e.preventDefault();
             var target = item.getAttribute("href");
             const targetEl = document.querySelector(target);
             const targetRect = targetEl.getBoundingClientRect();
 
             console.log(targetRect.top);
 
-            gsap.to(bodyScrollBar, {
-                scrollTo: targetRect.top,
-                duration: 1,
-            });
+            locoScroll.scrollTo(targetEl);
+
+            // gsap.to(locoScroll, {
+            //     scrollTo: targetRect.top,
+            //     duration: 1,
+            // });
 
             // if supported by the browser we can even update the URL.
             if (window.history && window.history.pushState) {

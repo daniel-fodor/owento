@@ -1,5 +1,6 @@
 .page-wrapper {
-    height: 100vh;
+    overflow: hidden !important;
+    //height: 100vh;
 }
 
 .page {
@@ -1183,7 +1184,7 @@
         height: 36vw;
         position: absolute;
         left: -220px;
-        top: 0;
+        top: 150px;
 
         opacity: 0;
         left: -720px;

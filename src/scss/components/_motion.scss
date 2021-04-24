@@ -10,7 +10,7 @@
 .parallax-ball {
     position: absolute;
     left: -300px;
-    bottom: 450px;
+    bottom: 65%;
     width: 30vw;
     height: 30vw;
 
@@ -20,7 +20,6 @@
 }
 
 .ball-graphics {
-    position: absolute;
     width: 30vw;
     height: 30vw;
     background: url("#{$imgPath}metal-ball.png") no-repeat;
