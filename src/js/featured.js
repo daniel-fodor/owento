@@ -111,7 +111,7 @@ function actionHero() {
 function actionFeatured01() {
     const featuredBlock01 = document.querySelector(".featured-block--01");
     const blockTitle = document.querySelector(".featured-block--01 .block-title");
-
+    const blockTitleNumber = document.querySelector(".featured-block--01 .block-title .number");
     const coverImg = document.querySelector(".featured-block--01 .cover-img");
 
 
@@ -135,12 +135,21 @@ function actionFeatured01() {
         },
     });
 
+    gsap.to(blockTitleNumber, 1.5, {
+        y: 0,
+        scrollTrigger: {
+            trigger: featuredBlock01,
+            start: "top 20%",
+        },
+    });
+
 }
 
 function actionFeatured02() {
     const featuredBlock02 = document.querySelector(".featured-block--02");
     const blockTitle = document.querySelector(".featured-block--02 .block-title");
     const projectValues = document.querySelectorAll(".project-values__item");
+    const blockTitleNumber = document.querySelector(".featured-block--02 .block-title .number");
 
     gsap.to(blockTitle, 2, {
         opacity: 1,
@@ -163,6 +172,14 @@ function actionFeatured02() {
         },
     });
 
+    gsap.to(blockTitleNumber, 1.5, {
+        y: 0,
+        scrollTrigger: {
+            trigger: featuredBlock02,
+            start: "top 90%",
+        },
+    });
+
 }
 
 function actionFeatured03() {
@@ -170,7 +187,7 @@ function actionFeatured03() {
     const blockTitle = document.querySelector(".featured-block--03 .block-title");
     const dashboardImg = document.querySelector(".featured-block--03 .img-wrapper");
     const moreScreens = document.querySelectorAll(".featured-block--03 .more-screens-col");
-
+    const blockTitleNumber = document.querySelector(".featured-block--03 .block-title .number");
 
     gsap.to(blockTitle, 2, {
         opacity: 1,
@@ -197,8 +214,15 @@ function actionFeatured03() {
         x: 0,
         scrollTrigger: {
             trigger: featuredBlock03,
-            start: "center 90%",
-            markers: true
+            start: "center 90%"
+        },
+    });
+
+    gsap.to(blockTitleNumber, 1.5, {
+        y: 0,
+        scrollTrigger: {
+            trigger: featuredBlock03,
+            start: "top 80%",
         },
     });
 }
@@ -207,6 +231,7 @@ function actionFeatured03() {
 function actionFeatured04() {
     const featuredBlock04 = document.querySelector(".featured-block--04");
     const blockTitle = document.querySelector(".featured-block--04 .block-title");
+    const blockTitleNumber = document.querySelector(".featured-block--04 .block-title .number");
 
     gsap.to(blockTitle, 2, {
         opacity: 1,
@@ -215,8 +240,15 @@ function actionFeatured04() {
             trigger: featuredBlock04,
             start: "top 90%",
             end: "+=80%",
-            scrub: 1,
-            markers: true
+            scrub: 1
+        },
+    });
+
+    gsap.to(blockTitleNumber, 1.5, {
+        y: 0,
+        scrollTrigger: {
+            trigger: featuredBlock04,
+            start: "top 90%",
         },
     });
 
