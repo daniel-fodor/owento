@@ -20,12 +20,13 @@
 * Featured Hero Section
 */
 .hero--featured {
-    min-height: 110vh;
+    min-height: 900px;
+    height: 110vh;
 
     &__logo {
         max-width: 580px;
-        padding-top: 210px;
         margin: 0 auto;
+        padding-top: 280px;
         opacity: 0;
         transform: translate(0, 40px);
 
@@ -555,7 +556,7 @@
     }
 
     .main-screen {
-        padding-bottom: 200px;
+        padding-bottom: 170px;
     }
 
     .img-wrapper {
@@ -574,7 +575,7 @@
 }
 
 .featured-block--04 {
-    padding-bottom: 350px;
+    padding-bottom: 270px;
 
     .circle-greeny {
         background: url("../img/featured/circle-greeny.png") no-repeat;

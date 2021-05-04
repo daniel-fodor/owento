@@ -205,7 +205,7 @@ function actionFeatured03() {
         y: 0,
         scrollTrigger: {
             trigger: featuredBlock03,
-            start: "top 300px",
+            start: "top 20%",
         },
     });
 
@@ -214,7 +214,7 @@ function actionFeatured03() {
         x: 0,
         scrollTrigger: {
             trigger: featuredBlock03,
-            start: "center 90%"
+            start: "center 60%"
         },
     });
 
