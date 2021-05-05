@@ -159,8 +159,8 @@ function sectionAnimations() {
         opacity: 1,
         y: 0,
         scrollTrigger: {
-            trigger: featuredSection,
-            start: "center center",
+            trigger: portfolio,
+            start: "top 60%",
         },
     });
 
@@ -343,7 +343,6 @@ function initPortfolioSlider() {
  * Tile parallax animations
  */
 
-var maxWidth = 992;
 function startAnimations() {
 
         // animation to top of the page section
@@ -358,9 +357,8 @@ function startAnimations() {
     const timeline = gsap.timeline({
         paused: true,
         scrollTrigger: {
-            trigger: "#services",
-            scroller: ".scroller",
-            start: "center center",
+            trigger: ".services-boxes",
+            start: "center 50%",
             pin: true,
             scrub: true,
         },
@@ -594,6 +592,10 @@ function initIsotope() {
             gutter: 30,
         },
     });
+
+    portfolioGrid.on( 'arrangeComplete', function() {
+        ScrollTrigger.refresh(); // it will update locoscroll too
+    } );
 
     var portfolioItems = document.querySelectorAll(".portfolio-categories a");
     [].forEach.call(portfolioItems, (item) => {
