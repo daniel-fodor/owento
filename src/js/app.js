@@ -25,7 +25,7 @@ function scrollBarInit() {
     locoScroll = new LocomotiveScroll({
         el: document.querySelector(".scroller"),
         smooth: true,
-        lerp: 0.1,
+        lerp: 0.05,
         smartphone: {
             smooth: true
         },
