@@ -186,6 +186,7 @@ function actionFeatured03() {
     const featuredBlock03 = document.querySelector(".featured-block--03");
     const blockTitle = document.querySelector(".featured-block--03 .block-title");
     const dashboardImg = document.querySelector(".featured-block--03 .img-wrapper");
+    const moreScreensParent = document.querySelectorAll(".featured-block--03 .more-screens");
     const moreScreens = document.querySelectorAll(".featured-block--03 .more-screens-col");
     const blockTitleNumber = document.querySelector(".featured-block--03 .block-title .number");
 
@@ -213,8 +214,8 @@ function actionFeatured03() {
         opacity: 1,
         x: 0,
         scrollTrigger: {
-            trigger: featuredBlock03,
-            start: "center 60%"
+            trigger: moreScreensParent,
+            start: "top 100%"
         },
     });
 
