@@ -20,12 +20,20 @@ window.onload = (event) => {
 function scrollBarInit() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    //const scroller = document.querySelector(".scroller");
+    var md = new MobileDetect(window.navigator.userAgent);
+
+    /* set lerpValue for devices */
+    if (md.mobile() || md.tablet() ) {
+        lerpVal = 0.05;
+    } else {
+        lerpVal = 1;
+    }
+
 
     locoScroll = new LocomotiveScroll({
         el: document.querySelector(".scroller"),
         smooth: true,
-        lerp: 0.05,
+        lerp: lerpVal,
         smartphone: {
             smooth: true
         },

@@ -6,6 +6,13 @@
     background: #fff;
 }
 
+
+@media (max-width: 992px) {
+    .scrollbar-track.scrollbar-track-y {
+        background: transparent;
+    }
+}
+
 /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
     overflow: hidden;
@@ -36,6 +43,10 @@ html.has-scroll-dragging {
     transition: transform 0.3s, opacity 0.3s;
     opacity: 0;
     background: #fff;
+
+    @media (max-width: 992px) {
+        background: transparent;
+    }
 }
 .c-scrollbar:hover {
     transform: scaleX(1.45);
