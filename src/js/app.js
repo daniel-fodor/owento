@@ -22,11 +22,12 @@ function scrollBarInit() {
 
     var md = new MobileDetect(window.navigator.userAgent);
 
+    let lerpVal = 0.05;
     /* set lerpValue for devices */
     if (md.mobile() || md.tablet() ) {
-        lerpVal = 0.05;
+        lerpVal = 0.1;
     } else {
-        lerpVal = 1;
+        lerpVal = 0.05;
     }
 
     locoScroll = new LocomotiveScroll({
@@ -40,8 +41,6 @@ function scrollBarInit() {
             smooth: true
         }
     });
-
-    console.log(locoScroll);
 
     // bodyScrollBar = Scrollbar.init(scroller, {
     //     delegateTo: document,

@@ -19,10 +19,11 @@ function scrollBarInit() {
     var md = new MobileDetect(window.navigator.userAgent);
 
     /* set lerpValue for devices */
+    let lerpVal = 0.05;
     if (md.mobile() || md.tablet() ) {
-        lerpVal = 0.05;
+        lerpVal = 0.1;
     } else {
-        lerpVal = 1;
+        lerpVal = 0.05;
     }
 
     locoScroll = new LocomotiveScroll({

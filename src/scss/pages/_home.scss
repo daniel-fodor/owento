@@ -1,9 +1,9 @@
 .site {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    // height: 100vh;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // width: 100%;
 }
 
 .page-wrapper {
@@ -845,6 +845,10 @@
                         opacity: 1;
                     }
 
+                    h3 {
+                        color: #fff;
+                    }
+
                     img {
                         transform: scale(1.12);
                     }
@@ -880,7 +884,7 @@
 
                 h3 {
                     z-index: 200;
-                    color: #fff;
+                    color: #454564;
                     font-size: 1.25rem;
                     margin-top: 15px;
                     opacity: 1;
@@ -888,6 +892,7 @@
                     padding-left: 15px;
                     padding-right: 15px;
                     font-weight: 500;
+                    transition: all .3s ease-in-out;
 
                     @media (max-width: 667px) {
                         opacity: 1;
