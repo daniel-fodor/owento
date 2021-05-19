@@ -29,7 +29,6 @@ function scrollBarInit() {
         lerpVal = 1;
     }
 
-
     locoScroll = new LocomotiveScroll({
         el: document.querySelector(".scroller"),
         smooth: true,
@@ -41,6 +40,8 @@ function scrollBarInit() {
             smooth: true
         }
     });
+
+    console.log(locoScroll);
 
     // bodyScrollBar = Scrollbar.init(scroller, {
     //     delegateTo: document,
