@@ -4,29 +4,41 @@
  *
  *
  */
-
 let locoScroll;
 let itWasInit = false;
 let currentYaxis = 0;
 
 /* init App */
 window.onload = (event) => {
-
     scrollBarInit();
+
     // start animation of the hero
     heroStartAnimation();
+
+    // video Init
+    const video = new Video();
+    video.init();
 };
+
+function Video() {
+    this.player = document.querySelector("#heroPlayer");
+
+    this.init = () => {
+        const player = new Plyr(this.player);
+    }
+}
 
 function scrollBarInit() {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     var md = new MobileDetect(window.navigator.userAgent);
 
+    let lerpVal = 0.05;
     /* set lerpValue for devices */
     if (md.mobile() || md.tablet() ) {
-        lerpVal = 0.05;
+        lerpVal = 0.1;
     } else {
-        lerpVal = 1;
+        lerpVal = 0.05;
     }
 
     locoScroll = new LocomotiveScroll({
@@ -40,8 +52,6 @@ function scrollBarInit() {
             smooth: true
         }
     });
-
-    console.log(locoScroll);
 
     // bodyScrollBar = Scrollbar.init(scroller, {
     //     delegateTo: document,
