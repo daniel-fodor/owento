@@ -20,6 +20,7 @@
         display: block;
         grid-column-start: 1;
         grid-column-end: 2;
+        text-align: left;
 
         &:hover svg path {
             fill: #fff;
@@ -104,6 +105,11 @@
                 display: block;
                 width: 40px;
                 height: 40px;
+
+                &.dribble {
+                    width: 34px;
+                    height: 34px;
+                }
             }
 
             a:hover {

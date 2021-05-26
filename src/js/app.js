@@ -24,7 +24,21 @@ function Video() {
     this.player = document.querySelector("#heroPlayer");
 
     this.init = () => {
-        const player = new Plyr(this.player);
+        let heroPlayer = new Plyr(this.player);
+        let hero = document.querySelector(".hero-player");
+
+        heroPlayer.on('ready', event => {
+            heroPlayer.play();
+
+            ScrollTrigger.create({
+                trigger: hero,
+                start: "0 0",
+                onEnter:() => heroPlayer.play(),
+                onLeave:() => heroPlayer.pause(),
+                onEnterBack:() => heroPlayer.play()
+            });
+
+        });
     }
 }
 

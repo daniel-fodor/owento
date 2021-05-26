@@ -40,6 +40,10 @@
     }
 }
 
+.page-top {
+    position: relative;
+}
+
 .page-content {
     background: #070216;
     position: relative;
@@ -721,12 +725,12 @@
                     }
                     a {
                         color: #454564;
-                        font-size: 1.81rem;
+                        font-size: 1.51rem;
                         padding-bottom: 5px;
                         position: relative;
 
                         @media (max-width: 1440px) {
-                            font-size: 1.55rem;
+                            font-size: 1.45rem;
                         }
 
                         @media (max-width: 1200px) {
@@ -734,7 +738,7 @@
                         }
 
                         @media (max-width: 667px) {
-                            font-size: 18px;
+                            font-size: 16px;
                         }
 
                         &:before {
@@ -1200,7 +1204,7 @@
 }
 
 .block--content {
-    padding: 200px 0 160px 0;
+    padding: 200px 0 80px 0;
     position: relative;
 
     @media (max-width: 1440px) {

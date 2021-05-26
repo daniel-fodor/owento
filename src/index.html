@@ -40,14 +40,6 @@
     </head>
 
     <body>
-        <!-- <div id="mouseCircle"></div> -->
-
-        <!-- <svg class="liquidEffect">
-            <filter id="noise" x='0%' y='0%' width='100%' height='100%'>
-                <feTurbulence baseFrequency="0.02 0.03" result="NOISE" numOctaves="1" id="turbulence" />
-                <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="20"></feDisplacementMap>
-            </filter>
-        </svg> -->
 
         <div class="site">
 
@@ -55,27 +47,32 @@
 
                 <div class="page">
 
-                    <!-- <div class="page__bg"></div> -->
-                    <header class="page-header">
-                        <a class="page-header__logo" href="index.html"
-                            ><img src="img/owento-logo.svg" alt="Owento"
-                        /></a>
-                        <nav class="page-navigation js-menu">
-                            <ul>
-                                <li><a href="#services">Services</a></li>
-                                <li><a href="#portfolio">Portfolio</a></li>
-                                <li><a href="#contact">Contact us</a></li>
-                            </ul>
-                        </nav>
-                    </header>
+                    <div class="page-top">
 
-                    <div class="hero-player">
-                        <div class="hero-player__container">
-                            <video id="heroPlayer" autoplay loop playsinline preload="none">
-                                <source src="https://owento.com/wp-content/uploads/2021/05/owento-intro_low.mp4" type="video/mp4" />
-                                <!-- <source src="video/owento-intro.mp4" type="video/webm" /> -->
-                            </video>
+                        <!-- <div class="page__bg"></div> -->
+                        <header class="page-header">
+                            <a class="page-header__logo" href="index.html"
+                                ><img src="img/owento-logo.svg" alt="Owento"
+                            /></a>
+                            <nav class="page-navigation js-menu">
+                                <ul>
+                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#portfolio">Portfolio</a></li>
+                                    <li><a href="#contact">Contact us</a></li>
+                                </ul>
+                            </nav>
+                        </header>
+
+                        <div class="hero-player">
+                            <div class="hero-player__container">
+                                <video id="heroPlayer" autoplay muted loop playsinline preload="none">
+                                    <source src="https://owento.com/wp-content/uploads/2021/05/owento-intro_low.mp4" type="video/mp4" />
+                                    <!-- <source src="video/owento-intro.mp4" type="video/webm" /> -->
+                                </video>
+                            </div>
                         </div>
+
+                        <div class="video-bottom-layer"></div>
                     </div>
 
                     <!--<div class="hero" id="hero">-->
@@ -103,33 +100,9 @@
 
                     <main class="page-content" id="pageContent">
 
-                        <div class="services-top-wrapper" style="position: relative;">
-                        <section class="block block--services" id="services">
+                        <section>
                             <div class="block__inner">
                                 <h2 class="block__title">What we do</h2>
-
-                                <div class="services-boxes">
-                                    <div class="services-boxes__item app" id="appService">
-                                        <div>#App</div>
-                                        <h2>App Design &<br> Development</h2>
-                                    </div>
-                                    <div class="services-boxes__item website" id="websiteService">
-                                        <div>#Web<br>site</div>
-                                        <h2>Website Design &<br> Development</h2>
-                                    </div>
-                                    <div class="services-boxes__item branding" id="brandingService">
-                                        <div>#Bran<br />ding</div>
-                                        <h2>Branding</h2>
-                                    </div>
-                                </div>
-
-                                <div class="services-action">
-                                    <p>Or anything What you need. :)</p>
-                                    <!-- <a class="btn--primary" href="#"
-                                        >Show All <span><svg xmlns="http://www.w3.org/2000/svg" width="16.68" height="9.508"><path data-name="Path 1" d="M8.34 9.508a1.165 1.165 0 01-.826-.342L.342 1.994A1.168 1.168 0 011.994.342L8.34 6.688 14.686.342a1.168 1.168 0 011.652 1.652L9.166 9.166a1.165 1.165 0 01-.826.342z" fill="#514564"/></svg></span
-                                    ></a> -->
-                                </div>
-
                                 <div class="services-list">
                                     <a href="#" class="services-list__item">
                                         <h2>Logo <br>Design</h2>
@@ -145,10 +118,32 @@
                                     </a>
                                 </div>
                             </div>
+                        </section>
+
+                        <div class="services-top-wrapper" style="position: relative;">
+                            <section class="block block--services" id="services">
+                                <div class="block__inner">
+                                    <h2 class="block__title">Our Team</h2>
+
+                                    <div class="services-boxes">
+                                        <div class="services-boxes__item app" id="appService">
+                                            <div>#App</div>
+                                            <h2>App Design &<br> Development</h2>
+                                        </div>
+                                        <div class="services-boxes__item website" id="websiteService">
+                                            <div>#Web<br>site</div>
+                                            <h2>Website Design &<br> Development</h2>
+                                        </div>
+                                        <div class="services-boxes__item branding" id="brandingService">
+                                            <div>#Bran<br />ding</div>
+                                            <h2>Branding</h2>
+                                        </div>
+                                    </div>
+                                </div>
                             </section>
 
-                            <div class="parallax-ball" aria-hidden="true" data-scroll data-scroll-delay="0.03" data-scroll-speed="-2">
-                                <div class="ball-graphics"></div>
+                            <div class="parallax-ananas" aria-hidden="true" data-scroll data-scroll-delay="0.03" data-scroll-speed="-2">
+                                <div class="ananas-graphics"></div>
                             </div>
 
                             <section class="block block--featured">
@@ -199,6 +194,7 @@
                                                 <li><a href="#" data-filter=".branding">Branding</a></li>
                                                 <li><a href="#" data-filter=".social-media">Social Media</a></li>
                                                 <li><a href="#" data-filter=".illustration">Illustrations</a></li>
+                                                <li><a href="#" data-filter=".printing">Printing Materials</a></li>
                                             </ul>
                                         </div>
                                         <div class="portfolio-items">
@@ -477,75 +473,40 @@
                                                 ></textarea>
                                             </div>
                                         </div>
-                                        <div
+                                        <!-- <div
                                             class="form-group form-group--checkbox"
                                         >
-                                            <!-- <div class="checkbox-wrapper">
+                                             <div class="checkbox-wrapper">
                                             <input type="checkbox" name="accept" id="accept">
                                             <label for="accept">I accepted to keep the data confidential by us.</label>
-                                        </div> -->
                                         </div>
+                                        </div> -->
                                         <div class="form-bottom-row">
                                             <div class="chat">
                                                 <span>Chat Directly</span>
                                                 <div class="chat__items">
-                                                    <a href="#" class="whatsapp"
-                                                        ><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="40.804"
-                                                            height="41"
-                                                        >
-                                                            <path
-                                                                d="M34.859 5.958A20.321 20.321 0 002.882 30.472L0 41l10.77-2.825a20.3 20.3 0 009.709 2.473h.009a20.325 20.325 0 0014.371-34.69zM20.487 37.216h-.007a16.865 16.865 0 01-8.595-2.354l-.616-.366-6.391 1.677 1.706-6.231-.4-.639a16.886 16.886 0 1114.3 7.913zm9.263-12.647c-.507-.254-3-1.482-3.469-1.652s-.8-.254-1.142.254-1.311 1.652-1.608 1.99-.592.381-1.1.127a13.865 13.865 0 01-4.081-2.518 15.313 15.313 0 01-2.824-3.516c-.3-.508 0-.757.223-1.036a14.36 14.36 0 001.269-1.736.934.934 0 00-.043-.889c-.127-.254-1.142-2.753-1.565-3.769-.412-.989-.831-.856-1.142-.871-.3-.015-.634-.018-.973-.018a1.865 1.865 0 00-1.354.635 5.694 5.694 0 00-1.777 4.23 9.875 9.875 0 002.073 5.251c.254.339 3.58 5.466 8.672 7.665a29.058 29.058 0 002.894 1.07 6.959 6.959 0 003.2.2c.975-.146 3-1.228 3.427-2.414a4.242 4.242 0 00.3-2.414c-.127-.212-.465-.339-.973-.593zm0 0"
-                                                                fill="#454564"
-                                                                fill-rule="evenodd"
-                                                            /></svg></a>
-                                                    <a href="#" class="tele"
-                                                        ><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="48.461"
-                                                            height="41"
-                                                        >
-                                                            <path
-                                                                d="M47.712 1.122A3.146 3.146 0 0045.215 0a4.9 4.9 0 00-1.743.347L2.452 16.006c-2.177.83-2.47 2.077-2.452 2.746s.382 1.9 2.6 2.6l.04.012 8.512 2.436 4.6 13.158a3.972 3.972 0 003.678 2.912 4.35 4.35 0 002.942-1.253l5.263-4.846 7.634 6.147.072.058.02.016A4.407 4.407 0 0038.043 41a3.761 3.761 0 003.585-3.333L48.35 4.479a3.964 3.964 0 00-.637-3.357zM14 23.341l16.416-8.386-10.223 10.861a1.417 1.417 0 00-.345.633l-1.971 7.984zm6.449 13.188a4.565 4.565 0 01-.2.17l1.829-7.406L25.4 31.97zM45.567 3.915L38.845 37.1c-.065.318-.271 1.057-.8 1.057a1.655 1.655 0 01-.93-.4l-8.65-6.965-5.147-4.145 14.776-15.709a1.42 1.42 0 00-1.68-2.238L12.1 21.121l-8.623-2.467L44.486 3a2.082 2.082 0 01.73-.16c.087 0 .241.01.3.081a1.354 1.354 0 01.053.995zm0 0"
-                                                                fill="#454564"
-                                                            /></svg></a>
-                                                    <a href="#" class="viber"><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="37.516"
-                                                            height="41"
-                                                        >
-                                                            <path
-                                                                data-name="Path 40"
-                                                                d="M37.516 14.47A14.509 14.509 0 0023.045 0h-8.574A14.509 14.509 0 00.001 14.47v6.74a14.342 14.342 0 002.631 8.3 14.52 14.52 0 005.941 4.91v3.871c0 2 1.121 2.712 2.08 2.712a2.932 2.932 0 002.039-1.006l4.309-4.316h6.041A14.509 14.509 0 0037.516 21.21zM23.045 33.278h-6.538a1.2 1.2 0 00-.849.352l-4.665 4.665-.018.018v-4.7a1.2 1.2 0 00-.773-1.122A12.157 12.157 0 012.401 21.21v-6.74A12.106 12.106 0 0114.471 2.4h8.574a12.107 12.107 0 0112.068 12.07v6.74a12.082 12.082 0 01-12.068 12.068zm0 0"
-                                                                fill="#454564"
-                                                            />
-                                                            <path
-                                                                data-name="Path 41"
-                                                                d="M21.952 19.646a1.2 1.2 0 00-1.7 0l-.97.97-3.76-3.76.97-.97a1.2 1.2 0 000-1.7l-4.549-4.549a1.2 1.2 0 00-1.7 0l-3.184 3.184a4.423 4.423 0 000 6.247l10.007 10.008a4.428 4.428 0 006.248 0l3.184-3.184a1.2 1.2 0 000-1.7zm-.334 7.733a2.025 2.025 0 01-2.85 0L8.761 17.371a2.017 2.017 0 010-2.85l2.335-2.335 2.85 2.85-.97.97a1.2 1.2 0 000 1.7l5.458 5.458a1.2 1.2 0 001.7 0l.97-.97 2.85 2.85zm0 0"
-                                                                fill="#454564"
-                                                            />
-                                                            <path
-                                                                data-name="Path 42"
-                                                                d="M19.049 5.313a1.2 1.2 0 000 2.4 10.292 10.292 0 0110.292 10.292 1.2 1.2 0 002.4 0A12.694 12.694 0 0019.047 5.311zm0 0"
-                                                                fill="#454564"
-                                                            />
-                                                            <path
-                                                                data-name="Path 43"
-                                                                d="M24.195 18.008a1.2 1.2 0 002.4 0 7.556 7.556 0 00-7.548-7.548 1.2 1.2 0 000 2.4 5.151 5.151 0 015.148 5.148zm0 0"
-                                                                fill="#454564"
-                                                            /></svg></a>
-                                                    <a href="#" class="fb"
-                                                        ><svg
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="41.5"
-                                                            height="41.5"
-                                                        >
-                                                            <path
-                                                                data-name="facebook (2)"
-                                                                d="M6.079 41.5h13.536V26.748h-4.863v-4.863h4.863v-6.079a6.086 6.086 0 016.079-6.079h6.079v4.863H26.91a2.434 2.434 0 00-2.432 2.432v4.863h7.076l-.811 4.863h-6.264V41.5h10.942a6.086 6.086 0 006.079-6.079V6.079A6.086 6.086 0 0035.421 0H6.079A6.086 6.086 0 000 6.079v29.342A6.086 6.086 0 006.079 41.5zM2.432 6.079a3.652 3.652 0 013.647-3.647h29.342a3.652 3.652 0 013.647 3.647v29.342a3.652 3.652 0 01-3.647 3.647H26.91V29.18h5.89l1.621-9.727H26.91v-2.432h7.295V7.295h-8.511a8.52 8.52 0 00-8.511 8.511v3.647H12.32v9.727h4.863v9.889H6.079a3.652 3.652 0 01-3.647-3.647zm0 0"
-                                                                fill="#454564"
-                                                            /></svg></a>
+                                                    <a href="https://api.whatsapp.com/send?phone=+36308616727" class="whatsapp" target="_blank"
+                                                        ><svg xmlns="http://www.w3.org/2000/svg" width="34.833" height="34.999" viewBox="0 0 34.833 34.999">
+                                                            <path id="whatsapp" d="M30.007,5.086A17.347,17.347,0,0,0,2.71,26.012L.25,35l9.194-2.412A17.325,17.325,0,0,0,17.732,34.7h.007A17.351,17.351,0,0,0,30.007,5.086ZM17.739,31.77h-.006A14.4,14.4,0,0,1,10.4,29.76l-.526-.313L4.414,30.879,5.87,25.56l-.343-.545A14.415,14.415,0,1,1,17.739,31.77Zm7.907-10.8c-.433-.217-2.564-1.265-2.961-1.41s-.686-.217-.975.217-1.119,1.41-1.372,1.7-.505.326-.939.109a11.836,11.836,0,0,1-3.485-2.151,13.072,13.072,0,0,1-2.411-3c-.253-.434,0-.646.19-.884a12.259,12.259,0,0,0,1.083-1.482.8.8,0,0,0-.036-.759c-.108-.217-.975-2.35-1.336-3.218-.352-.845-.709-.731-.975-.744s-.542-.015-.831-.015a1.592,1.592,0,0,0-1.156.542A4.86,4.86,0,0,0,8.926,13.49,8.43,8.43,0,0,0,10.7,17.973c.217.289,3.056,4.666,7.4,6.543a24.805,24.805,0,0,0,2.471.913A5.941,5.941,0,0,0,23.3,25.6a4.464,4.464,0,0,0,2.925-2.061,3.621,3.621,0,0,0,.253-2.061c-.108-.181-.4-.289-.83-.506Zm0,0" transform="translate(-0.25)" fill="#454564" fill-rule="evenodd"/>
+                                                          </svg>
+                                                          </a>
+                                                    <a href="https://telegram.me/owento" class="tele" target="_blank"
+                                                        ><svg xmlns="http://www.w3.org/2000/svg" width="41.369" height="35" viewBox="0 0 41.369 35">
+                                                            <path id="telegram" d="M40.73.958A2.686,2.686,0,0,0,38.6,0a4.181,4.181,0,0,0-1.488.3L2.093,13.663C.235,14.372-.016,15.437,0,16.008s.326,1.62,2.222,2.223l.034.01L9.52,20.32l3.928,11.233a3.391,3.391,0,0,0,3.138,2.483A3.713,3.713,0,0,0,19.1,32.965l4.493-4.137,6.517,5.247,0,0,.062.05.017.014A3.762,3.762,0,0,0,32.476,35h0a3.21,3.21,0,0,0,3.061-2.845L41.274,3.824A3.384,3.384,0,0,0,40.73.958ZM11.95,19.925l14.014-7.159-8.726,9.272a1.21,1.21,0,0,0-.294.54l-1.683,6.815Zm5.505,11.258c-.058.053-.116.1-.175.145L18.841,25l2.84,2.287ZM38.9,3.342,33.161,31.673c-.055.271-.232.9-.685.9a1.412,1.412,0,0,1-.794-.344L24.3,26.286l0,0L19.9,22.745,32.519,9.337a1.212,1.212,0,0,0-1.434-1.91L10.331,18.03,2.968,15.924,37.976,2.561a1.778,1.778,0,0,1,.623-.137c.074,0,.206.009.255.069a1.156,1.156,0,0,1,.045.849Zm0,0" transform="translate(0)" fill="#454564"/>
+                                                          </svg>
+                                                          </a>
+                                                    <a href="https://msng.link/o/?36308616727=vi" class="viber" target="_blank"><svg id="viber" xmlns="http://www.w3.org/2000/svg" width="32.026" height="34.999" viewBox="0 0 32.026 34.999">
+                                                            <path id="Path_40" data-name="Path 40" d="M32.025,12.353A12.386,12.386,0,0,0,19.672,0H12.352A12.386,12.386,0,0,0,0,12.353v5.753a12.243,12.243,0,0,0,2.246,7.082,12.4,12.4,0,0,0,5.072,4.192v3.3c0,1.709.957,2.315,1.776,2.315a2.5,2.5,0,0,0,1.74-.858l3.682-3.682h5.157A12.386,12.386,0,0,0,32.025,18.106ZM19.672,28.408H14.09a1.025,1.025,0,0,0-.725.3L9.383,32.69l-.016.015V28.695a1.025,1.025,0,0,0-.66-.958A10.378,10.378,0,0,1,2.05,18.106V12.352a10.335,10.335,0,0,1,10.3-10.3h7.319a10.335,10.335,0,0,1,10.3,10.3v5.753a10.314,10.314,0,0,1-10.3,10.3Zm0,0" transform="translate(0.001 0)" fill="#454564"/>
+                                                            <path id="Path_41" data-name="Path 41" d="M85.874,124.816a1.025,1.025,0,0,0-1.45,0l-.828.828-3.21-3.209.828-.828a1.025,1.025,0,0,0,0-1.45l-3.883-3.883a1.025,1.025,0,0,0-1.45,0l-2.718,2.718a3.776,3.776,0,0,0,0,5.333l8.543,8.543a3.78,3.78,0,0,0,5.333,0l2.718-2.718a1.025,1.025,0,0,0,0-1.45Zm-.285,6.6a1.729,1.729,0,0,1-2.433,0l-8.542-8.543a1.722,1.722,0,0,1,0-2.433l1.993-1.993,2.433,2.433-.828.828a1.025,1.025,0,0,0,0,1.45l4.66,4.66a1.026,1.026,0,0,0,1.45,0l.828-.828,2.433,2.433Zm0,0" transform="translate(-67.134 -108.045)" fill="#454564"/>
+                                                            <path id="Path_42" data-name="Path 42" d="M223.908,66.355a1.025,1.025,0,1,0,0,2.051,8.786,8.786,0,0,1,8.786,8.786,1.025,1.025,0,0,0,2.051,0,10.836,10.836,0,0,0-10.837-10.836Zm0,0" transform="translate(-207.647 -61.819)" fill="#454564"/>
+                                                            <path id="Path_43" data-name="Path 43" d="M228.3,137.064a1.025,1.025,0,0,0,2.051,0,6.451,6.451,0,0,0-6.443-6.443,1.025,1.025,0,1,0,0,2.051A4.4,4.4,0,0,1,228.3,137.064Zm0,0" transform="translate(-207.647 -121.692)" fill="#454564"/>
+                                                        </svg>
+                                                      </a>
+                                                    <a href="https://m.me/owentodotcom" class="fb" target="_blank"
+                                                        ><svg xmlns="http://www.w3.org/2000/svg" width="19.865" height="34.999" viewBox="0 0 19.865 34.999">
+                                                            <path id="facebook_1_" data-name="facebook (1)" d="M12.771,35h-5.6a1.7,1.7,0,0,1-1.7-1.7V20.659H2.2a1.7,1.7,0,0,1-1.7-1.7V13.544a1.7,1.7,0,0,1,1.7-1.7h3.27V9.134A9.236,9.236,0,0,1,7.91,2.517,8.8,8.8,0,0,1,14.4,0l4.275.007a1.7,1.7,0,0,1,1.695,1.7v5.03a1.7,1.7,0,0,1-1.7,1.7H15.79c-.878,0-1.1.176-1.149.23-.079.089-.173.342-.173,1.041v2.143h3.983a1.726,1.726,0,0,1,.84.213,1.7,1.7,0,0,1,.873,1.485l0,5.417a1.7,1.7,0,0,1-1.7,1.7h-4V33.3a1.7,1.7,0,0,1-1.7,1.7ZM7.52,32.947h4.9V19.741a1.135,1.135,0,0,1,1.134-1.134h4.561l0-4.709H13.55a1.135,1.135,0,0,1-1.133-1.134V9.7A3.494,3.494,0,0,1,13.1,7.3a3.478,3.478,0,0,1,2.687-.924h2.524V2.058l-3.919-.006c-4.24,0-6.875,2.714-6.875,7.083v3.631A1.135,1.135,0,0,1,6.387,13.9H2.552v4.709H6.387A1.135,1.135,0,0,1,7.52,19.741ZM18.667,2.058h0Zm0,0" transform="translate(-0.5)" fill="#454564"/>
+                                                          </svg>
+                                                          </a>
                                                 </div>
                                             </div>
                                             <button
@@ -580,11 +541,12 @@
                                     <li><a href="#services">Services</a></li>
                                     <li><a href="#portfolio">Portfolio</a></li>
                                     <li><a href="#contact">Contact Us</a></li>
+                                    <li><a href="get-help.html">Get Help</a></li>
                                 </ul>
                             </nav>
                             <ul class="page-footer__social">
                                 <li>
-                                    <a class="fb" target="_blank" href="#"
+                                    <a class="fb" target="_blank" href="https://www.facebook.com/owentodotcom"
                                         ><svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             width="41.5"
@@ -623,63 +585,11 @@
                                             </g></svg></a>
                                 </li>
                                 <li>
-                                    <a class="whatsapp" target="_blank" href="#"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="40.804"
-                                            height="41"
-                                            preserveAspectRatio="xMidYMid meet"
-                                            viewBox="0 0 50 50"
-                                        >
-                                            <path
-                                                d="M34.859 5.958A20.321 20.321 0 002.882 30.472L0 41l10.77-2.825a20.3 20.3 0 009.709 2.473h.009a20.325 20.325 0 0014.371-34.69zM20.487 37.216h-.007a16.865 16.865 0 01-8.595-2.354l-.616-.366-6.391 1.677 1.706-6.231-.4-.639a16.886 16.886 0 1114.3 7.913zm9.263-12.647c-.507-.254-3-1.482-3.469-1.652s-.8-.254-1.142.254-1.311 1.652-1.608 1.99-.592.381-1.1.127a13.865 13.865 0 01-4.081-2.518 15.313 15.313 0 01-2.824-3.516c-.3-.508 0-.757.223-1.036a14.36 14.36 0 001.269-1.736.934.934 0 00-.043-.889c-.127-.254-1.142-2.753-1.565-3.769-.412-.989-.831-.856-1.142-.871-.3-.015-.634-.018-.973-.018a1.865 1.865 0 00-1.354.635 5.694 5.694 0 00-1.777 4.23 9.875 9.875 0 002.073 5.251c.254.339 3.58 5.466 8.672 7.665a29.058 29.058 0 002.894 1.07 6.959 6.959 0 003.2.2c.975-.146 3-1.228 3.427-2.414a4.242 4.242 0 00.3-2.414c-.127-.212-.465-.339-.973-.593zm0 0"
-                                                fill="#454564"
-                                                fill-rule="evenodd"
-                                            /></svg></a>
-                                </li>
-                                <li>
-                                    <a class="tele" target="_blank" href="#"
-                                        ><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="48.461"
-                                            height="41"
-                                            preserveAspectRatio="xMidYMid meet"
-                                            viewBox="0 0 50 50"
-                                        >
-                                            <path
-                                                d="M47.712 1.122A3.146 3.146 0 0045.215 0a4.9 4.9 0 00-1.743.347L2.452 16.006c-2.177.83-2.47 2.077-2.452 2.746s.382 1.9 2.6 2.6l.04.012 8.512 2.436 4.6 13.158a3.972 3.972 0 003.678 2.912 4.35 4.35 0 002.942-1.253l5.263-4.846 7.634 6.147.072.058.02.016A4.407 4.407 0 0038.043 41a3.761 3.761 0 003.585-3.333L48.35 4.479a3.964 3.964 0 00-.637-3.357zM14 23.341l16.416-8.386-10.223 10.861a1.417 1.417 0 00-.345.633l-1.971 7.984zm6.449 13.188a4.565 4.565 0 01-.2.17l1.829-7.406L25.4 31.97zM45.567 3.915L38.845 37.1c-.065.318-.271 1.057-.8 1.057a1.655 1.655 0 01-.93-.4l-8.65-6.965-5.147-4.145 14.776-15.709a1.42 1.42 0 00-1.68-2.238L12.1 21.121l-8.623-2.467L44.486 3a2.082 2.082 0 01.73-.16c.087 0 .241.01.3.081a1.354 1.354 0 01.053.995zm0 0"
-                                                fill="#454564"
-                                            /></svg></a>
-                                </li>
-                                <li>
-                                    <a class="viber" target="_blank" href="#"><svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="37.516"
-                                            height="41"
-                                            preserveAspectRatio="xMidYMid meet"
-                                            viewBox="0 0 50 50"
-                                        >
-                                            <path
-                                                data-name="Path 40"
-                                                d="M37.516 14.47A14.509 14.509 0 0023.045 0h-8.574A14.509 14.509 0 00.001 14.47v6.74a14.342 14.342 0 002.631 8.3 14.52 14.52 0 005.941 4.91v3.871c0 2 1.121 2.712 2.08 2.712a2.932 2.932 0 002.039-1.006l4.309-4.316h6.041A14.509 14.509 0 0037.516 21.21zM23.045 33.278h-6.538a1.2 1.2 0 00-.849.352l-4.665 4.665-.018.018v-4.7a1.2 1.2 0 00-.773-1.122A12.157 12.157 0 012.401 21.21v-6.74A12.106 12.106 0 0114.471 2.4h8.574a12.107 12.107 0 0112.068 12.07v6.74a12.082 12.082 0 01-12.068 12.068zm0 0"
-                                                fill="#454564"
-                                            />
-                                            <path
-                                                data-name="Path 41"
-                                                d="M21.952 19.646a1.2 1.2 0 00-1.7 0l-.97.97-3.76-3.76.97-.97a1.2 1.2 0 000-1.7l-4.549-4.549a1.2 1.2 0 00-1.7 0l-3.184 3.184a4.423 4.423 0 000 6.247l10.007 10.008a4.428 4.428 0 006.248 0l3.184-3.184a1.2 1.2 0 000-1.7zm-.334 7.733a2.025 2.025 0 01-2.85 0L8.761 17.371a2.017 2.017 0 010-2.85l2.335-2.335 2.85 2.85-.97.97a1.2 1.2 0 000 1.7l5.458 5.458a1.2 1.2 0 001.7 0l.97-.97 2.85 2.85zm0 0"
-                                                fill="#454564"
-                                            />
-                                            <path
-                                                data-name="Path 42"
-                                                d="M19.049 5.313a1.2 1.2 0 000 2.4 10.292 10.292 0 0110.292 10.292 1.2 1.2 0 002.4 0A12.694 12.694 0 0019.047 5.311zm0 0"
-                                                fill="#454564"
-                                            />
-                                            <path
-                                                data-name="Path 43"
-                                                d="M24.195 18.008a1.2 1.2 0 002.4 0 7.556 7.556 0 00-7.548-7.548 1.2 1.2 0 000 2.4 5.151 5.151 0 015.148 5.148zm0 0"
-                                                fill="#454564"
-                                            />
-                                        </svg>
+                                    <a class="dribble" target="_blank" href="https://dribbble.com/owento">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="41.501" height="41.5" viewBox="0 0 41.501 41.5" preserveAspectRatio="xMidYMid meet"
+                                        viewBox="0 0 50 50">
+                                            <path id="dribbble-logo" d="M20.75,0A20.75,20.75,0,1,0,41.5,20.751,20.774,20.774,0,0,0,20.75,0ZM34.273,9.787a17.331,17.331,0,0,1,3.883,10.432,29.29,29.29,0,0,0-11.672-.112c-.625-1.461-1.271-2.852-1.924-4.167A34.362,34.362,0,0,0,34.273,9.787ZM31.935,7.412a30.939,30.939,0,0,1-8.919,5.565,79.958,79.958,0,0,0-5.9-9.261,17.376,17.376,0,0,1,14.816,3.7ZM13.754,4.8a76.265,76.265,0,0,1,6.071,9.357A55.69,55.69,0,0,1,3.813,16.7,17.484,17.484,0,0,1,13.754,4.8ZM3.35,20.037h.1a60.253,60.253,0,0,0,10.563-.975A51.327,51.327,0,0,0,21.4,17.155c.6,1.2,1.2,2.471,1.785,3.8A31.4,31.4,0,0,0,15.039,25a36.707,36.707,0,0,0-7.574,7A17.335,17.335,0,0,1,3.332,20.751C3.332,20.512,3.34,20.274,3.35,20.037Zm6.515,14.3a33.5,33.5,0,0,1,7.16-6.66,27.936,27.936,0,0,1,7.427-3.65,64.818,64.818,0,0,1,3.5,12.58,17.362,17.362,0,0,1-18.085-2.27Zm21.15.476a69.06,69.06,0,0,0-3.274-11.576,26.251,26.251,0,0,1,10.195.344A17.437,17.437,0,0,1,31.015,34.811Z" transform="translate(0 -0.001)" fill="#454564"/>
+                                          </svg>
                                     </a>
                                 </li>
                             </ul>

@@ -7,23 +7,23 @@
     z-index: 3000;
 }
 
-.parallax-ball {
+.parallax-ananas {
     position: absolute;
-    left: -300px;
+    left: -100px;
     bottom: 65%;
-    width: 30vw;
-    height: 30vw;
+    width: 20vw;
+    height: 40vw;
 
     @media (max-width: 1280px) {
         display: none;
     }
 }
 
-.ball-graphics {
-    width: 30vw;
-    height: 30vw;
-    background: url("#{$imgPath}metal-ball.png") no-repeat;
-    background-size: cover;
+.ananas-graphics {
+    width: 20vw;
+    height: 40vw;
+    background: url("#{$imgPath}ananas.png") no-repeat;
+    background-size: auto 100%;
     z-index: 100;
 
     @media (max-width: 1280px) {
