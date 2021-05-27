@@ -26,6 +26,13 @@ function Video() {
     this.init = () => {
         let heroPlayer = new Plyr(this.player);
         let hero = document.querySelector(".hero-player");
+        let heroSound = document.querySelector(".js-hero-sound");
+        let soundLine1 = document.getElementById("sound-line-1");
+        let soundLine2 = document.getElementById("sound-line-2");
+
+        // at the start everything was muted
+        soundLine1.style.display = "none";
+        soundLine2.style.display = "none";
 
         heroPlayer.on('ready', event => {
             heroPlayer.play();
@@ -37,7 +44,18 @@ function Video() {
                 onLeave:() => heroPlayer.pause(),
                 onEnterBack:() => heroPlayer.play()
             });
+        });
 
+        heroSound.addEventListener("click", function() {
+            if ( heroPlayer.volume == 1) {
+                heroPlayer.volume = 0;
+                soundLine1.style.display = "none";
+                soundLine2.style.display = "none";
+            } else {
+                heroPlayer.volume = 1;
+                soundLine1.style.display = "block";
+                soundLine2.style.display = "block";
+            }
         });
     }
 }

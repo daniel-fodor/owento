@@ -34,7 +34,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.13.1/css/OverlayScrollbars.min.css" integrity="sha512-jN4O0AUkRmE6Jwc8la2I5iBmS+tCDcfUd1eq8nrZIBnDKTmCp5YxxNN1/aetnAH32qT+dDbk1aGhhoaw5cJNlw==" crossorigin="anonymous" />
 
-        <link rel="stylesheet" href="css/style.css?v=6" />
+        <link rel="stylesheet" href="css/style.css?v=7" />
 
         <meta name="theme-color" content="#fafafa" />
     </head>
@@ -56,7 +56,14 @@
                             /></a>
                             <nav class="page-navigation js-menu">
                                 <ul>
-                                    <li><a href="#services">Services</a></li>
+                                    <li><a href="#services">Services</a>
+                                        <ul class="page-navigation__submenu">
+                                            <li><a href="#" class="ux"><i></i> UI / UX</a></li>
+                                            <li><a href="#" class="design"><i></i> Graphic Design</a></li>
+                                            <li><a href="#" class="dev"><i></i> Development</a></li>
+                                            <li><a href="#" class="seo"><i></i> SEO</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="#portfolio">Portfolio</a></li>
                                     <li><a href="#contact">Contact us</a></li>
                                 </ul>
@@ -73,82 +80,123 @@
                         </div>
 
                         <div class="video-bottom-layer"></div>
-                    </div>
 
-                    <!--<div class="hero" id="hero">-->
-                        <!-- <h1 class="hero__title" data-scroll data-scroll-speed="3" data-scroll-delay="0.06">
-                            Let's work Together on Your
-                            <span class="word">
-                                <span class="word__item">success.</span>
-                                <span class="word__item">brand.</span>
-                                <span class="word__item">website.</span>
-                            </span>
-                        </h1> -->
-                        <!-- <div class="drops" id="drops">
-                            <div class="drop drop-1" data-depth="0.1"></div>
-                            <div class="drop drop-2" data-depth="0.3"></div>
-                            <div class="drop drop-3" data-depth="0.1"></div>
-                            <div class="drop drop-4" data-depth="0.4"></div>
-                            <div class="drop drop-5" data-depth="0.3"></div>
-                            <div class="drop drop-6" data-depth="0.5"></div>
-                            <div class="drop drop-7" data-depth="0.6"></div>
-                            <div class="drop drop-8" data-depth="0.2"></div>
-                            <div class="drop drop-9" data-depth="0.3"></div>
-                            <div class="drop drop-10" data-depth="0.6"></div>
-                        </div> -->
-                   <!-- </div>-->
+                        <div class="video-sound">
+                            <button class="video-sound__btn js-hero-sound">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="31.782" height="28.258" viewBox="0 0 31.782 28.258">
+                                    <g id="audio-speaker-on" transform="translate(0 -6.393)">
+                                    <path id="Path_926" data-name="Path 926" d="M13.2,13.411,7.167,17.932H1.654A1.659,1.659,0,0,0,0,19.586V31.108a1.659,1.659,0,0,0,1.654,1.654H7.167L13.2,37.283A1.646,1.646,0,0,0,15.85,35.96V14.735A1.649,1.649,0,0,0,13.2,13.411Z" transform="translate(0 -4.837)" fill="#fff"/>
+                                    <path id="sound-line-1" data-name="Path 927" d="M68.663,22.639a1.93,1.93,0,0,0-2.729,2.729,9.184,9.184,0,0,1,0,12.983,1.946,1.946,0,0,0,0,2.729,1.9,1.9,0,0,0,2.7-.028A12.969,12.969,0,0,0,68.663,22.639Z" transform="translate(-47.355 -11.363)" fill="#fff"/>
+                                    <path id="sound-line-2" data-name="Path 928" d="M83.634,6.948a1.947,1.947,0,0,0,0,2.729,15.305,15.305,0,0,1,0,21.666,1.944,1.944,0,0,0,1.351,3.308,1.92,1.92,0,0,0,1.351-.551,19.166,19.166,0,0,0,0-27.124A1.888,1.888,0,0,0,83.634,6.948Z" transform="translate(-60.176)" fill="#fff"/>
+                                    </g>
+                                </svg>
+                            </button>
+                            <div>#better with<br> sound</div>
+                        </div>
+                    </div>
 
                     <main class="page-content" id="pageContent">
 
-                        <section>
+                        <section class="block block--what-we-do">
+
                             <div class="block__inner">
-                                <h2 class="block__title">What we do</h2>
-                                <div class="services-list">
-                                    <a href="#" class="services-list__item">
-                                        <h2>Logo <br>Design</h2>
-                                    </a>
-                                    <a href="#" class="services-list__item">
-                                        <h2>Social Media Design</h2>
-                                    </a>
-                                    <a href="#" class="services-list__item">
-                                        <h2>Web Banners</h2>
-                                    </a>
-                                    <a href="#" class="services-list__item">
-                                        <h2>Digital Illustrations</h2>
-                                    </a>
+                                <h2 class="block__title">What We Do?</h2>
+                                <div class="block__graphics-title" aria-hidden="true">What We Do?</div>
+
+                                <div class="parallax-wwd-circle" aria-hidden="true" data-scroll data-scroll-speed="1.15"></div>
+                                <div class="parallax-wwd-points" aria-hidden="true" data-scroll data-scroll-speed="0.2"></div>
+                                <div class="parallax-wwd-stars" aria-hidden="true" data-scroll data-scroll-speed="0.75"></div>
+                                <div class="parallax-wwd-triangle" aria-hidden="true" data-scroll data-scroll-speed="1.05"></div>
+                                <div class="parallax-wwd-vertical-lines" aria-hidden="true" data-scroll data-scroll-speed="0.5"></div>
+
+                                <div class="featured-list">
+                                    <div class="list-box">
+                                        <img src="img/web-design.svg" alt="ui and ux">
+                                        <h2>UI/UX</h2>
+                                        <ul>
+                                            <li><a href="#">Website Design</a></li>
+                                            <li><a href="#">Landing Page Design</a></li>
+                                            <li><a href="#">App Design</a></li>
+                                            <li><a href="#">UI Design</a></li>
+                                        </ul>
+                                        <div class="box-hashtag">#UI/UX</div>
+                                    </div>
+                                    <div class="list-box">
+                                        <img src="img/vector.svg" alt="graphics design">
+                                        <h2>Graphic Design</h2>
+                                        <ul>
+                                            <li><a href="#">Logo Design/Branding</a></li>
+                                            <li><a href="#">Social Media Design</a></li>
+                                            <li><a href="#">Web Banners</a></li>
+                                            <li><a href="#">Illustration</a></li>
+                                            <li><a href="#">Printing Materials</a></li>
+                                        </ul>
+
+                                    </div>
+                                    <div class="list-box">
+                                        <img src="img/coding.svg" alt="development">
+                                        <h2>Development</h2>
+                                        <ul>
+                                            <li><a href="#">WordPress</a></li>
+                                            <li><a href="#">E-commerce</a></li>
+                                            <li><a href="#">Mobile apps</a></li>
+                                            <li><a href="#">Web Programming</a></li>
+                                        </ul>
+                                        <div class="box-hashtag">#DEV/></div>
+                                    </div>
+                                    <div class="list-box">
+                                        <img src="img/seo.svg" alt="seo">
+                                        <h2>SEO</h2>
+                                        <ul>
+                                            <li><a href="#">Local SEO</a></li>
+                                            <li><a href="#">Ecommerce SEO</a></li>
+                                            <li><a href="#">Technical SEO</a></li>
+                                            <li><a href="#">Link Building</a></li>
+                                        </ul>
+                                        <div class="box-hashtag">#SEO</div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <div class="parallax-heel" aria-hidden="true" data-scroll data-scroll-delay="0.06" data-scroll-speed="6"></div>
+
                         </section>
+
 
                         <div class="services-top-wrapper" style="position: relative;">
                             <section class="block block--services" id="services">
                                 <div class="block__inner">
                                     <h2 class="block__title">Our Team</h2>
+                                    <div class="block__graphics-title" aria-hidden="true">Our Team</div>
 
                                     <div class="services-boxes">
                                         <div class="services-boxes__item app" id="appService">
-                                            <div>#App</div>
-                                            <h2>App Design &<br> Development</h2>
-                                        </div>
+                                            <img src="img/developers/test.png" alt="Szen András">
+                                            <div>Andras Szen</div>
+                                            <h2>Graphic Designer</h2>
+                                        </div>n
                                         <div class="services-boxes__item website" id="websiteService">
-                                            <div>#Web<br>site</div>
-                                            <h2>Website Design &<br> Development</h2>
+                                            <img src="img/developers/bihari_dani.png" alt="Bihari Dániel">
+                                            <div>Daniel Bihari</div>
+                                            <h2>UI / UX Specialist</h2>
                                         </div>
                                         <div class="services-boxes__item branding" id="brandingService">
-                                            <div>#Bran<br />ding</div>
-                                            <h2>Branding</h2>
+                                            <img src="img/developers/test.png" alt="Fodor Dániel">
+                                            <div>Daniel Fodor</div>
+                                            <h2>Developer</h2>
                                         </div>
                                     </div>
                                 </div>
                             </section>
 
-                            <div class="parallax-ananas" aria-hidden="true" data-scroll data-scroll-delay="0.03" data-scroll-speed="-2">
+                            <div class="parallax-ananas" aria-hidden="true" data-scroll data-scroll-delay="0.02" data-scroll-speed="-3">
                                 <div class="ananas-graphics"></div>
                             </div>
 
                             <section class="block block--featured">
                                 <div class="block__inner">
                                     <h2 class="block__title">Previous Projects</h2>
+                                    <div class="block__graphics-title" aria-hidden="true">Previous Projects</div>
 
                                     <div class="featured-items">
                                         <div class="featured-items__left">
@@ -297,6 +345,8 @@
                         <section class="block block--clients">
                             <div class="block__inner">
                                 <h2 class="block__title">Our Clients</h2>
+                                <div class="block__graphics-title" aria-hidden="true">Our Clients</div>
+
                                 <div class="clients">
                                     <div class="clients__item">
                                         <img
@@ -360,6 +410,7 @@
                             <div class="icons-graphics parallax-item" data-scroll data-scroll-delay="0.02" data-scroll-speed="-3" aria-hidden="true"></div>
                             <div class="block__inner">
                                 <h2 class="block__title">Testimonials</h2>
+                                <div class="block__graphics-title" aria-hidden="true">Testimonials</div>
 
                                 <div class="testimonials-wrapper">
                                     <div
@@ -424,6 +475,8 @@
                             <div class="block__inner">
                                 <div class="contact">
                                     <h2 class="contact__title">Get In Touch</h2>
+                                    <div class="block__graphics-title" aria-hidden="true">Get In Touch</div>
+
                                     <p class="contact__desc">
                                         Contrary To Popular Belief, Lorem Ipsum Is
                                         Not Simply Random Text. It Has Roots In A
@@ -685,7 +738,7 @@
 
         <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
 
-        <script src="js/app.js"></script>
+        <script src="js/app.js?v=7"></script>
 
     </body>
 </html>

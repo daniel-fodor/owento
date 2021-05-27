@@ -19,6 +19,72 @@
     }
 }
 
+.parallax-heel {
+    width: 20vw;
+    height: 40vw;
+    background: url("#{$imgPath}heel-graphics.svg") no-repeat;
+    background-size: auto 100%;
+    z-index: 100;
+    position: absolute;
+    top: 20%;
+    right: -50px;
+}
+
+.parallax-wwd-circle {
+    background: url("#{$imgPath}services/circle-graphics.svg") no-repeat;
+    width: 148px;
+    height: 150px;
+    background-size: auto 100%;
+    z-index: 100;
+    position: absolute;
+    top: 35%;
+    left: 18%;
+}
+
+.parallax-wwd-points {
+    background: url("#{$imgPath}services/points-graphics.svg") no-repeat;
+    width: 113px;
+    height: 193px;
+    background-size: auto 100%;
+    z-index: 100;
+    position: absolute;
+    top: 45%;
+    right: 42%;
+}
+
+.parallax-wwd-stars {
+    background: url("#{$imgPath}services/stars-graphics.svg") no-repeat;
+    width: 91px;
+    height: 147px;
+    background-size: auto 100%;
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+}
+
+.parallax-wwd-triangle {
+    background: url("#{$imgPath}services/triangles.svg") no-repeat;
+    width: 129px;
+    height: 102px;
+    background-size: auto 100%;
+    z-index: 100;
+    position: absolute;
+    top: 65%;
+    right: 18%;
+}
+
+.parallax-wwd-vertical-lines {
+    background: url("#{$imgPath}services/vertical-lines.svg") no-repeat;
+    width: 28px;
+    height: 290px;
+    background-size: auto 100%;
+    z-index: 5000;
+    position: absolute;
+    bottom: 0;
+    right: 21%;
+}
+
 .ananas-graphics {
     width: 20vw;
     height: 40vw;

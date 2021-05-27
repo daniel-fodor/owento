@@ -5,7 +5,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: url("#{$imgPath}video-bottom-layer.png") no-repeat;
+    background: url("#{$imgPath}video-bottom-layer.png") repeat-x;
     background-position: center bottom;
     z-index: 4000;
     transform: translateZ(0);
@@ -31,7 +31,29 @@
             height: 100%;
             outline: none;
             position: relative;
+            transform: translate(0, -10%);
         }
+    }
+}
+
+.video-sound {
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+    color: #fff;
+    z-index: 5000;
+    opacity: 0.2;
+    text-align: right;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &__btn {
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 }
 

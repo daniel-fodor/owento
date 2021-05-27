@@ -41,14 +41,19 @@
         display: none;
     }
 
-    ul {
+    > ul {
         display: flex;
 
-        li {
+        > li {
             position: relative;
             margin: 0 1.25rem;
 
             &:hover {
+                .page-navigation__submenu {
+                    opacity: 1;
+                    visibility: visible;
+                }
+
                 &:nth-child(3):before {
                     opacity: 1;
                 }
@@ -75,7 +80,7 @@
                 }
             }
 
-            a {
+            > a {
                 color: #fff;
                 opacity: 0.65;
                 position: relative;
@@ -86,7 +91,74 @@
                     opacity: 1;
                 }
             }
+        }
+    }
 
+    &__submenu {
+        position: absolute;
+        left: 50%;
+        max-width: 174px;
+        min-width: 174px;
+        margin-left: -85px;
+        top: 160%;
+        background: #fff;
+        padding: 6px 0;
+        border-radius: 5px;
+        box-shadow: -6px 6px 30px rgba(0, 0, 0, 0.15);
+
+        opacity: 0;
+        visibility: hidden;
+        transition: all .35s ease-in-out;
+
+        > li {
+
+            a {
+                display: flex;
+                align-items: center;
+                padding: 7px 12px;
+                color: #000;
+                font-size: 0.95rem;
+                &:hover {
+                    background: #f1f1f1;
+                }
+
+                i {
+                    display: inline-block;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 18px;
+                    height: 15px;
+                    margin-right: 12px;
+                }
+
+                &.ux i{
+                    background-image: url("#{$imgPath}icons/user-interface.svg");
+                }
+
+                &.design i {
+                    background-image: url("#{$imgPath}icons/vector.svg");
+                }
+
+                &.dev i {
+                    background-image: url("#{$imgPath}icons/coding.svg");
+                }
+
+                &.seo i {
+                    background-image: url("#{$imgPath}icons/statistics.svg");
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            background: url("#{$imgPath}box-triangle.svg") no-repeat;
+            width: 15px;
+            height: 13px;
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translate(-50%, 0);
         }
     }
 }
