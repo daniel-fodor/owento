@@ -27,15 +27,13 @@ function Video() {
         let heroPlayer = new Plyr(this.player);
         let hero = document.querySelector(".hero-player");
         let heroSound = document.querySelector(".js-hero-sound");
-        let soundLine1 = document.getElementById("sound-line-1");
-        let soundLine2 = document.getElementById("sound-line-2");
+        let soundX = document.querySelector(".close-signal");
 
         // at the start everything was muted
-        soundLine1.style.display = "none";
-        soundLine2.style.display = "none";
+        soundX.style.display = "block";
 
         heroPlayer.on('ready', event => {
-            heroPlayer.play();
+            //heroPlayer.play();
 
             ScrollTrigger.create({
                 trigger: hero,
@@ -49,12 +47,10 @@ function Video() {
         heroSound.addEventListener("click", function() {
             if ( heroPlayer.volume == 1) {
                 heroPlayer.volume = 0;
-                soundLine1.style.display = "none";
-                soundLine2.style.display = "none";
+                soundX.style.display = "block";
             } else {
                 heroPlayer.volume = 1;
-                soundLine1.style.display = "block";
-                soundLine2.style.display = "block";
+                soundX.style.display = "none";
             }
         });
     }
@@ -184,10 +180,23 @@ function heroStartAnimation() {
 
 function sectionAnimations() {
     // step triggers and animations
+    const servicesSection = document.querySelector(".block--what-we-do");
+    const servicesBox = document.querySelectorAll(".block--what-we-do .list-box");
+
+    gsap.to(servicesBox, 2, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.55,
+        scrollTrigger: {
+            trigger: servicesSection,
+            start: "0 30%",
+        },
+    });
+
+
     const featuredSection = document.querySelector(".block--featured");
     const featuredLeft = document.querySelector(".featured-items__left");
     const featuredRight = document.querySelector(".featured-items__right");
-
     gsap.to(featuredLeft, 1, {
         opacity: 1,
         x: 0,

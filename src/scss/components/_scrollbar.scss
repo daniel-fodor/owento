@@ -37,7 +37,7 @@ html.has-scroll-dragging {
     position: absolute;
     right: 0;
     top: 0;
-    width: 11px;
+    width: 9px;
     height: 100vh;
     transform-origin: center right;
     transition: transform 0.3s, opacity 0.3s;
@@ -65,9 +65,11 @@ html.has-scroll-dragging {
     opacity: 1;
     width: 7px;
     border-radius: 10px;
-    margin: 2px;
+    border: none;
+    margin: 3px;
     cursor: -webkit-grab;
     cursor: grab;
+    margin-right: 1px;
 }
 .has-scroll-dragging .c-scrollbar_thumb {
     cursor: -webkit-grabbing;

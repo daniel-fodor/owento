@@ -45,7 +45,6 @@
 }
 
 .page-content {
-    background: #070216;
     position: relative;
 }
 
@@ -222,6 +221,11 @@
 
     .block__title {
         margin-bottom: 40px;
+    }
+
+    .block__inner {
+        position: relative;
+        z-index: 1500;
     }
 
     @media (max-width: 700px) {
@@ -608,6 +612,9 @@
             border-radius: 20px;
             position: relative;
 
+            opacity: 0;
+            transform: translate(0, 100px);
+
             &:nth-child(even) {
                 margin-top: 75px;
             }
@@ -671,6 +678,10 @@
                     a {
                         color: #454564;
                         font-size: 1.9rem;
+
+                        &:hover {
+                            color: #fff;
+                        }
                     }
                 }
             }
