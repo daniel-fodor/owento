@@ -186,10 +186,10 @@ function sectionAnimations() {
     const servicesSection = document.querySelector(".block--what-we-do");
     const servicesBox = document.querySelectorAll(".block--what-we-do .list-box");
 
-    gsap.to(servicesBox, 2, {
+    gsap.to(servicesBox, 1.5, {
         opacity: 1,
         y: 0,
-        stagger: 0.55,
+        stagger: 0.25,
         scrollTrigger: {
             trigger: servicesSection,
             start: "0 30%",
