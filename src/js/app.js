@@ -27,10 +27,11 @@ function Video() {
         let heroPlayer = new Plyr(this.player);
         let hero = document.querySelector(".hero-player");
         let heroSound = document.querySelector(".js-hero-sound");
-        let soundX = document.querySelector(".close-signal");
+        let soundOn = document.querySelector("#sound-on");
+        let soundOff = document.querySelector("#sound-off");
 
         // at the start everything was muted
-        soundX.style.display = "block";
+        soundOn.style.display = "none";
 
         heroPlayer.on('ready', event => {
             //heroPlayer.play();
@@ -47,10 +48,12 @@ function Video() {
         heroSound.addEventListener("click", function() {
             if ( heroPlayer.volume == 1) {
                 heroPlayer.volume = 0;
-                soundX.style.display = "block";
+                soundOn.style.display = "none";
+                soundOff.style.display = "block";
             } else {
                 heroPlayer.volume = 1;
-                soundX.style.display = "none";
+                soundOn.style.display = "block";
+                soundOff.style.display = "none";
             }
         });
     }
