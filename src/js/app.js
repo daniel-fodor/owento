@@ -7,18 +7,26 @@
 let locoScroll;
 let itWasInit = false;
 let currentYaxis = 0;
+let body = document.querySelector("body");
 
 /* init App */
 window.onload = (event) => {
-    scrollBarInit();
-
-    // start animation of the hero
-    heroStartAnimation();
-
-    // video Init
-    const video = new Video();
-    video.init();
+    body.classList.add("scroll-disabled");
+    loader();
 };
+
+function loader(cb) {
+
+    setTimeout(function() {
+        scrollBarInit();
+        // start animation of the hero
+        heroStartAnimation();
+        // video Init
+        const video = new Video();
+        video.init();
+    }, 3000);
+
+}
 
 function Video() {
     this.player = document.querySelector("#heroPlayer");
@@ -34,7 +42,10 @@ function Video() {
         soundOn.style.display = "none";
 
         heroPlayer.on('ready', event => {
-            //heroPlayer.play();
+            body.classList.remove("scroll-disabled");
+            document.querySelector(".init-loader--wrapper").remove();
+
+            heroPlayer.play();
 
             ScrollTrigger.create({
                 trigger: hero,
