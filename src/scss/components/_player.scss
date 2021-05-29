@@ -30,6 +30,7 @@
             width: 100%;
             height: 100%;
             outline: none;
+            object-fit: cover;
             position: relative;
             transform: translate(0, -10%);
         }
@@ -80,4 +81,8 @@ video::-webkit-media-controls-panel {
 
 .plyr--full-ui.plyr--video .plyr__control--overlaid {
     display: none;
+}
+
+.plyr__poster {
+    background-size:cover;
 }
