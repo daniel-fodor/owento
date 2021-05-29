@@ -189,7 +189,7 @@ function sectionAnimations() {
     gsap.to(servicesBox, 1.5, {
         opacity: 1,
         y: 0,
-        stagger: 0.25,
+        stagger: 0.2,
         scrollTrigger: {
             trigger: servicesSection,
             start: "0 30%",
