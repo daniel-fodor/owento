@@ -1,0 +1,150 @@
+.page-content--contact {
+    background: url("#{$imgPath}contact/contact-bg.png") no-repeat;
+    width: 100%;
+    background-position: -900px top;
+}
+
+.block--contact-us {
+    min-height: 100vh;
+    padding: 200px 0 100px 0;
+
+    .contact-us {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__left {
+            flex: 1 0 50%;
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        &__right {
+            flex: 1 0 50%;
+        }
+    }
+
+    /* contact form */
+    .contact--v2 {
+        max-width: 800px;
+        margin: 0 auto;
+
+        .contact__title {
+            text-align: center;
+            color: #fff;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.9px;
+            margin-bottom: 12px;
+
+            &:before {
+                content: '';
+                background: url("#{$imgPath}contact/help-icon.png") no-repeat;
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+                margin-right: 12px;
+                vertical-align: baseline;
+                position: relative;
+                top: 3px;
+            }
+        }
+
+        .contact__desc {
+            color: #808097;
+            text-align: center;
+            max-width: 462px;
+            font-size: 1.2rem;
+            line-height: 1.25;
+            margin: 0 auto 30px auto;
+        }
+
+        .form--contact input {
+            height: 59px;
+            border-radius: 5px;
+            font-size: 1rem;
+            border-color: #454564;
+            padding: 0 15px;
+
+            &:active,
+            &:focus {
+                border-color: #06e9e3;
+            }
+        }
+
+        .form--contact label {
+            display: block;
+            color: #808097;
+            position: static;
+            font-weight: 300;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .form--contact textarea {
+            border-radius: 5px;
+            min-height: 179px;
+            padding: 20px 20px;
+        }
+
+        .form--contact .label--textarea {
+            margin-bottom: 25px;
+        }
+
+        .form-bottom-row--center {
+            text-align: center;
+            justify-content: center;
+        }
+
+        .form--contact .btn--submit {
+            background: #01F090;
+            border-radius: 10px;
+            height: 53px;
+            min-width: 131px;
+            padding: 0 20px;
+            font-weight: 400;
+            font-size: 1.05rem;
+            letter-spacing: 0.2px;
+        }
+    }
+
+    .file-upload-box {
+        padding: 25px;
+        width: 100%;
+        border-radius: 20px;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='20' ry='20' stroke='%23454564FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        border-radius: 20px;
+        text-align: center;
+
+        .text {
+            color: #454564;
+            padding-left: 25px;
+
+            span {
+                display: inline-block;
+                &.filedesc {
+                    font-size: 1.1rem;
+                    margin-bottom: 10px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        background: url("#{$imgPath}contact/paperclip.svg") no-repeat;
+                        background-size: 100% 100%;
+                        width: 18px;
+                        height: 18px;
+                        display: block;
+                        position: absolute;
+                        left: -30px;
+                        top: 0;
+                    }
+                }
+            }
+            .filesize {
+                font-size: 0.85rem;
+            }
+        }
+    }
+}

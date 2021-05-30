@@ -4,7 +4,6 @@
  *
  *
  */
-
 let locoScroll;
 
 window.onload = (event) => {

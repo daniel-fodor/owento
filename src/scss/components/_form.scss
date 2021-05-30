@@ -1,3 +1,24 @@
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #454564;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #454564;
+}
+input:-ms-input-placeholder,
+textarea::-moz-placeholder {
+    /* IE 10+ */
+    color: #454564;
+}
+input:-moz-placeholder,
+textarea::-moz-placeholder {
+    /* Firefox 18- */
+    color: #454564;
+}
+
 input[type="text"],
 input[type="email"] {
     height: 90px;
@@ -9,7 +30,7 @@ input[type="email"] {
     padding: 0 32px;
     font-size: 1.321rem;
     color: #fff;
-    transition: all .45s ease-in-out;
+    transition: all 0.45s ease-in-out;
 
     @media (max-width: 800px) {
         height: 70px;
@@ -19,10 +40,10 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="text"]:active,
-input[type="email"]:active  {
+input[type="email"]:active {
     outline: none;
-    box-shadow: 0 0 65px rgba(#06E9E3, 0.15), 0 5px 105px rgba(#06E9E3, 0.15);
-    border-color: #06E9E3;
+    box-shadow: 0 0 65px rgba(#06e9e3, 0.15), 0 5px 105px rgba(#06e9e3, 0.15);
+    border-color: #06e9e3;
 }
 
 textarea {
@@ -35,13 +56,14 @@ textarea {
     padding: 40px 32px 20px 32px;
     min-height: 242px;
     width: 100%;
-    transition: all .45s ease-in-out;
+    transition: all 0.45s ease-in-out;
 
     &:focus,
     &:active {
         outline: none;
-        box-shadow: 0 0 65px rgba(#06E9E3, 0.15), 0 5px 105px rgba(#06E9E3, 0.15);
-        border-color: #06E9E3;
+        box-shadow: 0 0 65px rgba(#06e9e3, 0.15),
+            0 5px 105px rgba(#06e9e3, 0.15);
+        border-color: #06e9e3;
     }
 }
 
@@ -53,7 +75,7 @@ label {
     font-size: 1.625rem;
     line-height: 1;
     transform-origin: 0 0;
-    transition: all .25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 
     @media (max-width: 800px) {
         font-size: 16px;
@@ -112,7 +134,8 @@ label {
 }
 
 .form--contact {
-    input, textarea {
+    input,
+    textarea {
         width: 100%;
     }
     .form-bottom-row {
@@ -176,12 +199,10 @@ label {
             }
 
             svg path {
-                transition: all .35s ease-in-out;
+                transition: all 0.35s ease-in-out;
             }
         }
     }
 }
 
 /* custom checkbox */
-
-
