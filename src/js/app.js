@@ -630,12 +630,15 @@ function navigation(locoScroll) {
     let allMenuItems = document.querySelectorAll(".js-menu a");
     [].forEach.call(allMenuItems, function (item) {
         item.addEventListener("click", function (e) {
+
+            if (item.getAttribute("id") === "contactLink") {
+                return true;
+            }
+
             e.preventDefault();
             var target = item.getAttribute("href");
             const targetEl = document.querySelector(target);
             const targetRect = targetEl.getBoundingClientRect();
-
-            console.log(targetRect.top);
 
             locoScroll.scrollTo(targetEl);
 
