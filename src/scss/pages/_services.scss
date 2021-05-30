@@ -1,0 +1,199 @@
+.page-content--services {
+    background: url("#{$imgPath}contact/contact-bg.png") no-repeat;
+    width: 100%;
+    background-position: -900px top;
+
+    // override animation
+    .block--content {
+        padding-top: 100px;
+    }
+
+    .block--content .hand-graphics {
+        opacity: 1;
+        left: -220px;
+        top: 300px;
+    }
+
+    .block--content .contact {
+        opacity: 1;
+    }
+}
+
+.service-view {
+    min-height: 100vh;
+    padding: 260px 0 90px 0;
+
+    .service-article {
+        max-width: 1300px;
+        margin-bottom: 260px;
+
+        &__title {
+            color: #06E9E3;
+            font-size: 76px;
+            margin-bottom: 35px;
+            position: relative;
+
+            .bg-title {
+                position: absolute;
+                color: #fff;
+                opacity: 0.05;
+                font-size: 109px;
+                left: 0;
+                top: -50px;
+            }
+        }
+
+        .intro-text {
+            font-weight: 500;
+            font-size: 1.9rem;
+            max-width: 844px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.475rem;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 35px;
+        }
+    }
+
+    .service-columns {
+        display: flex;
+        justify-content: space-between;
+
+        .col {
+            flex: 1 0 50%;
+
+            &:nth-child(2) {
+                padding-left: 40px;
+            }
+
+            &__title {
+                color: #06E9E3;
+                font-size: 67px;
+                margin-bottom: 35px;
+                font-weight: 600;
+                position: relative;
+
+                .bg-title {
+                    position: absolute;
+                    color: #fff;
+                    opacity: 0.05;
+                    font-size: 90px;
+                    left: 0;
+                    top: -50px;
+                }
+            }
+        }
+    }
+
+    .service-column-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__item {
+            flex: 1 0 50%;
+            padding-right: 10px;
+            position: relative;
+            margin-bottom: 25px;
+
+            span {
+                border-bottom: 2px solid;
+                display: inline-block;
+                color: #fff;
+                font-size: 1.9rem;
+            }
+
+            i {
+                background: url("#{$imgPath}contact/item-point.svg") no-repeat;
+                background-size: 100% 100%;
+                display: inline-block;
+                width: 11px;
+                height: 11px;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    .service-lists {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 110px 150px;
+        margin-top: 150px;
+        padding-left: 127px;
+
+        &__item {
+            position: relative;
+
+            .title--graphics {
+                position: absolute;
+                transform-origin: 0% 0%;
+                transform: rotate(-90deg);
+                top: 100%;
+                left: -100px;
+                color:#454564;
+                font-size: 80px;
+                font-weight: 400;
+                text-transform: uppercase;
+                opacity: 0.3;
+            }
+
+            .item-number {
+                background: #06E9E3;
+                color: #fff;
+                border-radius: 20px;
+                font-weight: 700;
+                font-size: 70px;
+                width: 114px;
+                height: 105px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 30px;
+                position: relative;
+
+                span {
+                    position: relative;
+                    z-index: 10;
+                }
+
+                &:before {
+                    content: '';
+                    background: url("#{$imgPath}contact/circle-striped-graphics.svg") no-repeat;
+                    width: 148px;
+                    height: 144px;
+                    position: absolute;
+                    left: -45px;
+                    top: -45px;
+                    z-index: 0;
+                }
+            }
+
+            .item-data {
+                h4 {
+                    color: #fff;
+                    font-size: 1.865rem;
+                    font-weight: 500;
+                    margin-bottom: 3px;
+                }
+            }
+
+            .stars {
+                background: url("#{$imgPath}contact/xxx-icon.svg") no-repeat;
+                margin-bottom: 13px;
+                width: 40px;
+                height: 10px;
+            }
+
+            p {
+                max-width: 370px;
+                font-size: 1.3875rem;
+                font-weight: 300;
+                line-height: 1.7;
+                margin-bottom: 0;
+            }
+
+        }
+    }
+}
