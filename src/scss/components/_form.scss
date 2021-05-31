@@ -57,6 +57,7 @@ textarea {
     min-height: 242px;
     width: 100%;
     transition: all 0.45s ease-in-out;
+    resize: none;
 
     &:focus,
     &:active {
