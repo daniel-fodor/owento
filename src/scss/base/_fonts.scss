@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'HikouOutline';
+    src: url('#{$fontPath}HikouOutline.eot');
+    src: url('#{$fontPath}HikouOutline.eot') format('embedded-opentype'),
+         url('#{$fontPath}HikouOutline.woff2') format('woff2'),
+         url('#{$fontPath}HikouOutline.woff') format('woff'),
+         url('#{$fontPath}HikouOutline.ttf') format('truetype'),
+         url('#{$fontPath}HikouOutline.svg#HikouOutline') format('svg');
+}
