@@ -83,6 +83,10 @@
     position: absolute;
     bottom: 0;
     right: 21%;
+
+    @media (max-width: 992px) {
+        display: none;
+    }
 }
 
 .ananas-graphics {

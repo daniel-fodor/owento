@@ -1,6 +1,6 @@
 /**
  *
- * Powr-Full featured.js
+ * Owento featured.js
  *
  *
  */

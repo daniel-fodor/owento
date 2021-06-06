@@ -1,12 +1,10 @@
 /**
  *
- * Powr-Full
- * app.js
+ * Owento app.js
  *
  *
  */
 let locoScroll;
-let itWasInit = false;
 let currentYaxis = 0;
 let body = document.querySelector("body");
 
@@ -20,8 +18,6 @@ function loader(cb) {
 
     setTimeout(function() {
         scrollBarInit();
-        // start animation of the hero
-        heroStartAnimation();
         // video Init
         const video = new Video();
         video.init();
@@ -96,22 +92,6 @@ function scrollBarInit() {
         }
     });
 
-    // bodyScrollBar = Scrollbar.init(scroller, {
-    //     delegateTo: document,
-    // });
-
-    // if (!itWasInit) {
-    //     bodyScrollBar.setPosition(0, 0);
-    //     itWasInit = true;
-    // } else {
-    //     console.log(currentYaxis);
-    //     console.log("újra init");
-    //     if (currentYaxis > 0) {
-    //         bodyScrollBar.setPosition(0, currentYaxis);
-    //     }
-    // }
-    //bodyScrollBar.track.xAxis.element.remove();
-
     ScrollTrigger.scrollerProxy(".scroller", {
         scrollTop(value) {
             if (arguments.length) {
@@ -146,46 +126,6 @@ function scrollBarInit() {
     });
 }
 
-/**
-Init animation
-******************************** */
-function heroStartAnimation() {
-    const $html = document.querySelector("html");
-    const $pageBg = document.querySelector(".page__bg");
-    const $hero = document.querySelector(".hero");
-    const $hero_title = document.querySelector(".hero__title");
-    const $pageHeader = document.querySelector(".page-header");
-    const $drops = document.querySelectorAll(".drop");
-
-    //$html.classList.add("scroll-disabled");
-
-    var htl = gsap.timeline();
-    htl.to($pageBg, 1.5, {
-        opacity: 1,
-        x: 0,
-    });
-    htl.to($hero_title, 1.5, {
-        opacity: 1,
-        y: 0,
-    });
-    htl.to($pageHeader, 1, {
-        opacity: 1,
-    });
-    htl.to(
-        $drops,
-        1,
-        {
-            y: 0,
-            opacity: 1,
-            stagger: 0.15,
-            onComplete: function () {
-                var scene = document.getElementById("drops");
-                var parallaxInstance = new Parallax(scene);
-            },
-        },
-        "-=1"
-    );
-}
 
 /**
  *
@@ -394,26 +334,6 @@ function initPortfolioSlider() {
 }
 
 /**
- * Mouse Events
- */
-
-//document.addEventListener('mousemove', setMouseCirclePos);
-
-// function setMouseCirclePos(e) {
-//     let x = e.clientX;
-//     let y = e.clientY;
-
-//     let element = document.querySelector("#mouseCircle");
-//     let compStyle = window.getComputedStyle(element);
-//     let h = compStyle.getPropertyValue("height");
-//     let w = compStyle.getPropertyValue("width");
-//     setTimeout(function () {
-//         element.style.top = y - parseInt(h) / 2 + "px";
-//         element.style.left = x - parseInt(w) / 2 + "px";
-//     }, 100);
-// }
-
-/**
  *
  * Tile parallax animations
  */
@@ -548,78 +468,6 @@ let textarea = document.querySelectorAll("textarea");
     });
 });
 
-/**
- *
- * Words animations
- *
- */
-function wordsAnimation() {
-    var words = document.getElementsByClassName("word__item");
-    var wordArray = [];
-    var currentWord = 0;
-
-    words[currentWord].style.opacity = 1;
-    for (var i = 0; i < words.length; i++) {
-        splitLetters(words[i]);
-    }
-
-    function changeWord() {
-        var cw = wordArray[currentWord];
-        var nw =
-            currentWord == words.length - 1
-                ? wordArray[0]
-                : wordArray[currentWord + 1];
-        for (var i = 0; i < cw.length; i++) {
-            animateLetterOut(cw, i);
-        }
-
-        for (var i = 0; i < nw.length; i++) {
-            nw[i].className = "letter behind";
-            nw[0].parentElement.style.opacity = 1;
-            animateLetterIn(nw, i);
-        }
-
-        currentWord = currentWord == wordArray.length - 1 ? 0 : currentWord + 1;
-    }
-
-    function animateLetterOut(cw, i) {
-        setTimeout(function () {
-            cw[i].className = "letter out";
-        }, i * 80);
-    }
-
-    function animateLetterIn(nw, i) {
-        setTimeout(function () {
-            nw[i].className = "letter in";
-        }, 340 + i * 80);
-    }
-
-    function splitLetters(word) {
-        var content = word.innerHTML;
-        word.innerHTML = "";
-        var letters = [];
-        for (var i = 0; i < content.length; i++) {
-            var letter = document.createElement("span");
-            letter.className = "letter";
-            letter.innerHTML = content.charAt(i);
-            word.appendChild(letter);
-            letters.push(letter);
-        }
-
-        wordArray.push(letters);
-    }
-
-    setTimeout(function () {
-        changeWord();
-
-        setInterval(changeWord, 2000);
-    }, 500);
-}
-
-// Start wordsAnimation delayed
-setTimeout(function () {
-    wordsAnimation();
-}, 1700);
 
 /**
  *

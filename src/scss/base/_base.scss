@@ -23,8 +23,12 @@ body {
         font-size: 14px;
     }
 
-    @media (max-width: 667px) {
+    @media (max-width: 800px) {
         font-size: 13px;
+    }
+
+    @media (max-width: 667px) {
+        font-size: 12px;
     }
 }
 

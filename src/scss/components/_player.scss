@@ -28,11 +28,15 @@
 
         video {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             outline: none;
             object-fit: cover;
             position: relative;
             transform: translate(0, -10%);
+
+            @media (max-width: 667px) {
+                height: 100vh;
+            }
         }
     }
 }
@@ -46,6 +50,11 @@
     opacity: 0.2;
     text-align: right;
     transition: all .3s ease-in-out;
+
+    @media (max-width: 667px) {
+        bottom: 30px;
+        right: 30px;
+    }
 
     &:hover {
         opacity: 1;

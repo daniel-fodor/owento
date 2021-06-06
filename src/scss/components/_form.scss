@@ -161,6 +161,7 @@ label {
 
         @media (max-width: 667px) {
             margin-bottom: 25px;
+            margin-top: 30px;
             flex-wrap: wrap;
             width: 100%;
             order: 0;
@@ -182,7 +183,8 @@ label {
 
             @media (max-width: 667px) {
                 width: 100%;
-                justify-content: center;
+                justify-content: space-around;
+                margin-top: 15px;
             }
 
             a {
@@ -190,6 +192,12 @@ label {
                 margin: 0 0.85rem;
                 &:first-child {
                     margin-left: 1.325rem;
+                }
+
+                @media (max-width: 667px) {
+                    &:first-child {
+                        margin-left: 0.85rem;
+                    }
                 }
             }
 
