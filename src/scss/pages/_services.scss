@@ -6,6 +6,10 @@
     // override animation
     .block--content {
         padding-top: 100px;
+
+        @media (max-width: 667px) {
+            padding-top: 30px;
+        }
     }
 
     .block--content .hand-graphics {
@@ -23,9 +27,33 @@
     min-height: 100vh;
     padding: 260px 0 90px 0;
 
+    @media (max-width: 667px) {
+        padding-top: 150px;
+    }
+
+    .container {
+        padding: 0 90px;
+
+        @media (max-width: 1440px) {
+            padding: 0 60px;
+        }
+
+        @media (max-width: 800px) {
+            padding: 0 40px;
+        }
+
+        @media (max-width: 667px) {
+            padding: 0 20px;
+        }
+    }
+
     .service-article {
         max-width: 1300px;
         margin-bottom: 260px;
+
+        @media (max-width: 1440px) {
+            margin-bottom: 160px;
+        }
 
         &__title {
             color: #06E9E3;
@@ -40,6 +68,19 @@
                 font-size: 109px;
                 left: 0;
                 top: -50px;
+
+                @media (max-width: 1440px) {
+                    font-size: 58px;
+                }
+
+                @media (max-width: 800px) {
+                    top: -30px;
+                    font-size: 42px;
+                }
+            }
+
+            @media (max-width: 1440px) {
+                font-size: 48px;
             }
         }
 
@@ -62,11 +103,27 @@
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 800px) {
+            flex-wrap: wrap;
+        }
+
         .col {
             flex: 1 0 50%;
 
+            @media (max-width: 800px) {
+                flex: 1 0 100%;
+                margin-bottom: 60px;
+                &:nth-child(2) {
+                    order: -1;
+                }
+            }
+
             &:nth-child(2) {
                 padding-left: 40px;
+
+                @media (max-width: 800px) {
+                    padding-left: 0;
+                }
             }
 
             &__title {
@@ -76,6 +133,10 @@
                 font-weight: 600;
                 position: relative;
 
+                @media (max-width: 1440px) {
+                    font-size: 48px;
+                }
+
                 .bg-title {
                     position: absolute;
                     color: #fff;
@@ -83,6 +144,14 @@
                     font-size: 90px;
                     left: 0;
                     top: -50px;
+
+                    @media (max-width: 1440px) {
+                        font-size: 52px;
+                    }
+
+                    @media (max-width: 800px) {
+                        top: -30px;
+                    }
                 }
             }
         }
@@ -92,17 +161,35 @@
         display: flex;
         flex-wrap: wrap;
 
+        @media (max-width: 667px) {
+            justify-content: center;
+        }
+
         &__item {
             flex: 1 0 50%;
             padding-right: 10px;
             position: relative;
             margin-bottom: 25px;
+            display: flex;
 
-            span {
+            @media (max-width: 667px) {
+                flex: 1 0 100%;
+                width: 100%;
+            }
+
+            a {
                 border-bottom: 2px solid;
                 display: inline-block;
                 color: #fff;
                 font-size: 1.9rem;
+
+                @media (max-width: 1440px) {
+                    font-size: 1.5rem;
+                }
+
+                &:hover {
+                    color: #06E9E3;
+                }
             }
 
             i {
@@ -112,6 +199,13 @@
                 width: 11px;
                 height: 11px;
                 margin-right: 12px;
+                position: relative;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                @media (max-width: 1440px) {
+
+                }
             }
         }
     }
@@ -123,8 +217,28 @@
         margin-top: 150px;
         padding-left: 127px;
 
+        @media (max-width: 1440px) {
+            padding-left: 80px;
+            grid-gap: 80px 90px;
+            margin-top: 100px;
+        }
+
+        @media (max-width: 800px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 667px) {
+            display: block;
+            padding-left: 45px;
+            margin-top: 0;
+        }
+
         &__item {
             position: relative;
+
+            @media (max-width: 667px) {
+                margin-bottom: 50px;
+            }
 
             .title--graphics {
                 position: absolute;
@@ -142,6 +256,11 @@
                 height: 80px;
                 width: 100%;
                 text-align: center;
+
+                @media (max-width: 667px) {
+                    font-size: 48px;
+                    left: -40px;
+                }
             }
 
             .item-number {
@@ -157,6 +276,12 @@
                 justify-content: center;
                 margin-bottom: 30px;
                 position: relative;
+
+                @media (max-width: 667px) {
+                    font-size: 42px;
+                    width: 84px;
+                    height: 75px;
+                }
 
                 span {
                     position: relative;
