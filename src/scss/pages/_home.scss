@@ -947,6 +947,10 @@
 
         .block__graphics-title {
             top: 45px;
+
+            @media (max-width: 667px) {
+                top: 90px;
+            }
         }
 
         .portfolio-categories {
