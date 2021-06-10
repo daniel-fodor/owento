@@ -42,8 +42,8 @@
     }
 
     @media (max-width: 667px) {
-        min-height: 600px;
-        height: 80vh;
+        min-height: 500px;
+        height: 60vh;
     }
 
 
@@ -149,6 +149,10 @@
 .featured-block {
     position: relative;
     min-height: 100vh;
+
+    @media (max-width: 667px) {
+        min-height: 50vh;
+    }
 }
 
 .featured-block--01 {
@@ -644,6 +648,10 @@
                     top: -70px;
                     left: 0;
                     width: auto;
+                    @media (max-width: 667px) {
+                        top: -20px;
+                        width: 80%;
+                    }
                 }
             }
 
