@@ -44,6 +44,8 @@ function Video() {
 
             heroPlayer.play();
 
+            heroStartAnimation();
+
             ScrollTrigger.create({
                 trigger: hero,
                 start: "0 0",
@@ -123,6 +125,18 @@ function scrollBarInit() {
 
     imagesLoaded(document.querySelector(".page-wrapper"), function (instance) {
         ScrollTrigger.refresh();
+    });
+}
+
+/**
+Init animation
+******************************** */
+function heroStartAnimation() {
+    const $pageHeader = document.querySelector(".page-header");
+    var htl = gsap.timeline();
+    htl.to($pageHeader, 2, {
+        opacity: 1,
+        delay: 4
     });
 }
 
